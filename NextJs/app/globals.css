@@ -174,3 +174,19 @@ input:focus, textarea:focus, select:focus { outline: 2px solid rgba(56, 189, 248
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 640px) {
+  /* Hide text nav links on mobile, keep the login button */
+  .nav a:not(.shiny-green-btn) { display: none; }
+
+  /* Make headings block so underline spans full width */
+  h1, h2, h3, h4, h5, h6, .shiny-gold-heading {
+    display: block;
+  }
+
+  /* Ensure contractor card text wraps gracefully */
+  .contractor-card-text { font-size: 0.95rem !important; }
+
+  /* Tighten hero padding on mobile */
+  .hero-section { padding: 48px 0 36px !important; }
+}
+

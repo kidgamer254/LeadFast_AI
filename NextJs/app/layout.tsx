@@ -1,5 +1,11 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   title: "LeadFast AI | HVAP Contractor Portal",
@@ -13,6 +19,7 @@ export const metadata: Metadata = {
     apple: "/icon.svg",
   },
 };
+
 
 export default function RootLayout({
   children,

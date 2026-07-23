@@ -76,107 +76,78 @@ export default function LandingPage() {
               <h3 style={{ fontSize: '1.25rem', margin: '0 0 16px', color: '#38bdf8' }}>
                 Featured Contractor Specialties Available
               </h3>
-              
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '14px', transition: 'transform 0.2s ease' }}>
-                  <img
-                    src="/images/plumbing.jpg"
-                    alt="Plumbing & Pipefitting Icon"
-                    style={{
-                      width: '54px',
-                      height: '54px',
-                      borderRadius: '12px',
-                      objectFit: 'cover',
-                      border: '2px solid #38bdf8',
-                      boxShadow: '0 4px 12px rgba(56, 189, 248, 0.3)',
-                      flexShrink: 0
-                    }}
-                  />
-                  <div>
-                    <div style={{ fontWeight: '700', color: '#f8fafc', fontSize: '1.05rem' }}>1. Plumbing & Pipefitting Specialists</div>
-                    <div style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '2px' }}>Leak detection, pipe repairs, water heater installation, and 24/7 emergency plumbing dispatch.</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+
+                {/* 1. Plumbing */}
+                <div style={{ background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '16px', padding: '20px', transition: 'transform 0.2s ease' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
+                    <img src="/images/plumbing.jpg" alt="Plumbing Icon" style={{ width: '48px', height: '48px', borderRadius: '10px', objectFit: 'cover', border: '2px solid #38bdf8', boxShadow: '0 4px 12px rgba(56,189,248,0.3)', flexShrink: 0 }} />
+                    <div>
+                      <div style={{ fontWeight: '700', color: '#f8fafc', fontSize: '1.05rem' }}>1. Plumbing & Pipefitting Specialists</div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '4px', lineHeight: '1.5' }}>Leak detection, pipe repairs, water heater installation, and 24/7 emergency plumbing dispatch.</div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img src="/images/plumbing.jpg" alt="Plumbing & Pipefitting" style={{ width: '70%', height: '340px', objectFit: 'contain', borderRadius: '12px', border: '1px solid rgba(56,189,248,0.2)', background: 'rgba(0,0,0,0.2)' }} />
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '14px', transition: 'transform 0.2s ease' }}>
-                  <img
-                    src="/images/HVAC.jpg"
-                    alt="HVAC & Climate Control Icon"
-                    style={{
-                      width: '54px',
-                      height: '54px',
-                      borderRadius: '12px',
-                      objectFit: 'cover',
-                      border: '2px solid #FFD166',
-                      boxShadow: '0 4px 12px rgba(255, 209, 102, 0.3)',
-                      flexShrink: 0
-                    }}
-                  />
-                  <div>
-                    <div style={{ fontWeight: '700', color: '#f8fafc', fontSize: '1.05rem' }}>2. HVAC & Climate Control Technicians</div>
-                    <div style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '2px' }}>Air conditioning installation, furnace heating repairs, ventilation ductwork, and thermostat automation.</div>
+                {/* 2. HVAC */}
+                <div style={{ background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(255, 209, 102, 0.25)', borderRadius: '16px', padding: '20px', transition: 'transform 0.2s ease' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
+                    <img src="/images/HVAC.jpg" alt="HVAC Icon" style={{ width: '48px', height: '48px', borderRadius: '10px', objectFit: 'cover', border: '2px solid #FFD166', boxShadow: '0 4px 12px rgba(255,209,102,0.3)', flexShrink: 0 }} />
+                    <div>
+                      <div style={{ fontWeight: '700', color: '#f8fafc', fontSize: '1.05rem' }}>2. HVAC & Climate Control Technicians</div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '4px', lineHeight: '1.5' }}>Air conditioning installation, furnace heating repairs, ventilation ductwork, and thermostat automation.</div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img src="/images/HVAC.jpg" alt="HVAC & Climate Control" style={{ width: '70%', height: '340px', objectFit: 'contain', borderRadius: '12px', border: '1px solid rgba(255,209,102,0.2)', background: 'rgba(0,0,0,0.2)' }} />
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '14px', transition: 'transform 0.2s ease' }}>
-                  <img
-                    src="/images/Electrical.jpg"
-                    alt="Certified Electrical Icon"
-                    style={{
-                      width: '54px',
-                      height: '54px',
-                      borderRadius: '12px',
-                      objectFit: 'cover',
-                      border: '2px solid #4ade80',
-                      boxShadow: '0 4px 12px rgba(74, 222, 128, 0.3)',
-                      flexShrink: 0
-                    }}
-                  />
-                  <div>
-                    <div style={{ fontWeight: '700', color: '#f8fafc', fontSize: '1.05rem' }}>3. Certified Electrical Contractors</div>
-                    <div style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '2px' }}>Electrical panel upgrades, full building rewiring, EV charger setup, and safety inspection services.</div>
+                {/* 3. Electrical */}
+                <div style={{ background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(74, 222, 128, 0.25)', borderRadius: '16px', padding: '20px', transition: 'transform 0.2s ease' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
+                    <img src="/images/Electrical.jpg" alt="Electrical Icon" style={{ width: '48px', height: '48px', borderRadius: '10px', objectFit: 'cover', border: '2px solid #4ade80', boxShadow: '0 4px 12px rgba(74,222,128,0.3)', flexShrink: 0 }} />
+                    <div>
+                      <div style={{ fontWeight: '700', color: '#f8fafc', fontSize: '1.05rem' }}>3. Certified Electrical Contractors</div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '4px', lineHeight: '1.5' }}>Electrical panel upgrades, full building rewiring, EV charger setup, and safety inspection services.</div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img src="/images/Electrical.jpg" alt="Certified Electrical Contractors" style={{ width: '70%', height: '340px', objectFit: 'contain', borderRadius: '12px', border: '1px solid rgba(74,222,128,0.2)', background: 'rgba(0,0,0,0.2)' }} />
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '14px', transition: 'transform 0.2s ease' }}>
-                  <img
-                    src="/images/roofing.jpg"
-                    alt="Roofing & Exterior Icon"
-                    style={{
-                      width: '54px',
-                      height: '54px',
-                      borderRadius: '12px',
-                      objectFit: 'cover',
-                      border: '2px solid #f472b6',
-                      boxShadow: '0 4px 12px rgba(244, 114, 182, 0.3)',
-                      flexShrink: 0
-                    }}
-                  />
-                  <div>
-                    <div style={{ fontWeight: '700', color: '#f8fafc', fontSize: '1.05rem' }}>4. Roofing & Exterior Waterproofing</div>
-                    <div style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '2px' }}>Shingle replacement, gutter system repair, roof leak sealing, and structural weatherproofing.</div>
+                {/* 4. Roofing */}
+                <div style={{ background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(244, 114, 182, 0.25)', borderRadius: '16px', padding: '20px', transition: 'transform 0.2s ease' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
+                    <img src="/images/roofing.jpg" alt="Roofing Icon" style={{ width: '48px', height: '48px', borderRadius: '10px', objectFit: 'cover', border: '2px solid #f472b6', boxShadow: '0 4px 12px rgba(244,114,182,0.3)', flexShrink: 0 }} />
+                    <div>
+                      <div style={{ fontWeight: '700', color: '#f8fafc', fontSize: '1.05rem' }}>4. Roofing & Exterior Waterproofing</div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '4px', lineHeight: '1.5' }}>Shingle replacement, gutter system repair, roof leak sealing, and structural weatherproofing.</div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img src="/images/roofing.jpg" alt="Roofing & Exterior Waterproofing" style={{ width: '70%', height: '340px', objectFit: 'contain', borderRadius: '12px', border: '1px solid rgba(244,114,182,0.2)', background: 'rgba(0,0,0,0.2)' }} />
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px', padding: '16px 20px', background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '14px', transition: 'transform 0.2s ease' }}>
-                  <img
-                    src="/images/remodel.jpg"
-                    alt="General Contracting & Remodeling Icon"
-                    style={{
-                      width: '54px',
-                      height: '54px',
-                      borderRadius: '12px',
-                      objectFit: 'cover',
-                      border: '2px solid #c084fc',
-                      boxShadow: '0 4px 12px rgba(192, 132, 252, 0.3)',
-                      flexShrink: 0
-                    }}
-                  />
-                  <div>
-                    <div style={{ fontWeight: '700', color: '#f8fafc', fontSize: '1.05rem' }}>5. General Contracting & Remodeling Pros</div>
-                    <div style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '2px' }}>Home renovations, kitchen/bathroom upgrades, carpentry, drywall repair, and turnkey construction management.</div>
+                {/* 5. General Contracting */}
+                <div style={{ background: 'rgba(30, 41, 59, 0.6)', border: '1px solid rgba(192, 132, 252, 0.25)', borderRadius: '16px', padding: '20px', transition: 'transform 0.2s ease' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
+                    <img src="/images/remodel.jpg" alt="Remodeling Icon" style={{ width: '48px', height: '48px', borderRadius: '10px', objectFit: 'cover', border: '2px solid #c084fc', boxShadow: '0 4px 12px rgba(192,132,252,0.3)', flexShrink: 0 }} />
+                    <div>
+                      <div style={{ fontWeight: '700', color: '#f8fafc', fontSize: '1.05rem' }}>5. General Contracting & Remodeling Pros</div>
+                      <div style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '4px', lineHeight: '1.5' }}>Home renovations, kitchen/bathroom upgrades, carpentry, drywall repair, and turnkey construction management.</div>
+                    </div>
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <img src="/images/remodel.jpg" alt="General Contracting & Remodeling" style={{ width: '70%', height: '340px', objectFit: 'contain', borderRadius: '12px', border: '1px solid rgba(192,132,252,0.2)', background: 'rgba(0,0,0,0.2)' }} />
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
