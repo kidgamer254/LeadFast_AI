@@ -23,6 +23,113 @@ body {
   min-height: 100vh;
   background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 28%), var(--bg);
 }
+
+/* Shiny Golden Brown Headings with Traversing Light Animation (every 2s) + 1px Golden Underline */
+h1, h2, h3, h4, h5, h6, .shiny-gold-heading {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(
+    110deg,
+    #8B5E00 0%,
+    #B37409 20%,
+    #D4870A 35%,
+    #FFF6D6 48%,
+    #FFFFFF 50%,
+    #FFF6D6 52%,
+    #D4870A 65%,
+    #B37409 80%,
+    #8B5E00 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  animation: goldTraverse 2s linear infinite;
+  text-shadow: 0 0 25px rgba(212, 135, 10, 0.15);
+  margin-bottom: 12px;
+}
+
+/* 1px shiny golden line underlining every heading */
+h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, .shiny-gold-heading::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  margin-top: 6px;
+  background: linear-gradient(
+    110deg,
+    #8B5E00 0%,
+    #B37409 20%,
+    #D4870A 35%,
+    #FFF6D6 48%,
+    #FFFFFF 50%,
+    #FFF6D6 52%,
+    #D4870A 65%,
+    #B37409 80%,
+    #8B5E00 100%
+  );
+  background-size: 200% 100%;
+  animation: goldTraverse 2s linear infinite;
+  box-shadow: 0 1px 8px rgba(212, 135, 10, 0.4);
+}
+
+@keyframes goldTraverse {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Shiny Green Button with Greenish Shadow */
+.shiny-green-btn {
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 32px;
+  border-radius: 999px;
+  border: 1px solid #34d399;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.55), 0 4px 15px rgba(5, 150, 105, 0.4);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.shiny-green-btn::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(25deg);
+  animation: buttonShine 3s infinite;
+}
+
+@keyframes buttonShine {
+  0% { left: -60%; }
+  35%, 100% { left: 140%; }
+}
+
+.shiny-green-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 35px rgba(16, 185, 129, 0.85), 0 8px 25px rgba(5, 150, 105, 0.6);
+  border-color: #6ee7b7;
+}
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }
 

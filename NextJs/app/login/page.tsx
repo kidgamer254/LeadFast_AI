@@ -146,37 +146,55 @@ export default function LoginPage() {
           
           {step === 'role_select' ? (
             <div>
-              <p style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '8px' }}>
-                Welcome to LeadFast AI
+              <h1 style={{ margin: '0 0 8px', fontSize: '2.2rem' }}>Welcome to LeadFast AI</h1>
+              <p style={{ color: '#38bdf8', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '16px' }}>
+                Contractor & Client Access Portal
               </p>
-              <h1 style={{ margin: '0 0 12px', fontSize: '1.8rem' }}>How would you like to proceed?</h1>
+              <h2 style={{ margin: '0 0 12px', fontSize: '1.4rem' }}>How would you like to proceed?</h2>
               <p style={{ color: '#94a3b8', marginBottom: '28px', lineHeight: '1.5' }}>
                 Please select your role to be directed to the appropriate portal.
               </p>
 
-              <div style={{ display: 'grid', gap: '16px' }}>
+              <div style={{ display: 'grid', gap: '18px' }}>
                 <button
                   type="button"
                   onClick={() => handleSelectRole('contractor')}
                   style={{
                     display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
+                    alignItems: 'center',
+                    gap: '16px',
                     padding: '20px',
-                    borderRadius: '14px',
-                    background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(56, 189, 248, 0.1))',
-                    border: '1px solid var(--accent)',
+                    borderRadius: '16px',
+                    background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(56, 189, 248, 0.12))',
+                    border: '1px solid rgba(56, 189, 248, 0.4)',
                     color: 'white',
                     textAlign: 'left',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 8px 24px rgba(2, 6, 23, 0.3)'
                   }}
                 >
-                  <span style={{ fontSize: '1.15rem', fontWeight: '700', marginBottom: '4px' }}>
-                    🛠️ I am a Contractor
-                  </span>
-                  <span style={{ fontSize: '0.9rem', color: '#94a3b8' }}>
-                    Sign in to your private dashboard to view your business leads and metrics.
-                  </span>
+                  <img
+                    src="/images/appliance.png"
+                    alt="Contractor Icon"
+                    style={{
+                      width: '60px',
+                      height: '60px',
+                      borderRadius: '14px',
+                      objectFit: 'cover',
+                      border: '2px solid #38bdf8',
+                      boxShadow: '0 4px 14px rgba(56, 189, 248, 0.35)',
+                      flexShrink: 0
+                    }}
+                  />
+                  <div>
+                    <span style={{ fontSize: '1.2rem', fontWeight: '700', color: '#f8fafc', display: 'block', marginBottom: '2px' }}>
+                      I am a Contractor
+                    </span>
+                    <span style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: '1.4', display: 'block' }}>
+                      Sign in to your private dashboard to view your business leads and metrics.
+                    </span>
+                  </div>
                 </button>
 
                 <button
@@ -184,23 +202,40 @@ export default function LoginPage() {
                   onClick={() => handleSelectRole('client')}
                   style={{
                     display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'flex-start',
+                    alignItems: 'center',
+                    gap: '16px',
                     padding: '20px',
-                    borderRadius: '14px',
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    border: '1px solid var(--border)',
+                    borderRadius: '16px',
+                    background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.08))',
+                    border: '1px solid rgba(52, 211, 153, 0.4)',
                     color: 'white',
                     textAlign: 'left',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    boxShadow: '0 8px 24px rgba(2, 6, 23, 0.3)'
                   }}
                 >
-                  <span style={{ fontSize: '1.15rem', fontWeight: '700', marginBottom: '4px' }}>
-                    📋 I am a Client / Lead
-                  </span>
-                  <span style={{ fontSize: '0.9rem', color: '#94a3b8' }}>
-                    Browse available contractors by trade and submit a service request.
-                  </span>
+                  <img
+                    src="/images/client.jpg"
+                    alt="Client Icon"
+                    style={{
+                      width: '60px',
+                      height: '60px',
+                      borderRadius: '14px',
+                      objectFit: 'cover',
+                      border: '2px solid #34d399',
+                      boxShadow: '0 4px 14px rgba(52, 211, 153, 0.35)',
+                      flexShrink: 0
+                    }}
+                  />
+                  <div>
+                    <span style={{ fontSize: '1.2rem', fontWeight: '700', color: '#f8fafc', display: 'block', marginBottom: '2px' }}>
+                      I am a Client / Lead
+                    </span>
+                    <span style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: '1.4', display: 'block' }}>
+                      Browse available contractors by trade and submit a service request.
+                    </span>
+                  </div>
                 </button>
               </div>
             </div>
@@ -336,48 +371,6 @@ export default function LoginPage() {
 
         </div>
 
-        {/* Separate Card Field for LeadFast AI Overview & 3 SVG Trade Graphics */}
-        <div className="panel card" style={{ width: '100%', maxWidth: '780px', padding: '32px', background: 'rgba(15, 23, 42, 0.65)', border: '1px solid rgba(56, 189, 248, 0.2)', borderRadius: '16px' }}>
-          <h2 style={{ fontSize: '1.35rem', color: '#f8fafc', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span>⚡</span> About LeadFast AI
-          </h2>
-          <p style={{ color: '#e2e8f0', fontSize: '0.94rem', lineHeight: '1.7', marginBottom: '16px' }}>
-            <strong>LeadFast AI</strong> is an instant lead response system engineered specifically for home service contractors like HVAC technicians, plumbers, and roofers. By intercepting website contact form submissions and generating personalized, context-aware email replies within 30 seconds, LeadFast AI bridges the critical response-time gap when contractors are busy in the field—ensuring no high-intent lead is lost to competitors while logging all interactions into a streamlined business dashboard.
-          </p>
-          <p style={{ color: '#cbd5e1', fontSize: '0.92rem', lineHeight: '1.7', marginBottom: '28px' }}>
-            For clients, this means an end to waiting hours or days for quotes by receiving immediate, intelligent answers tailored to their specific home service needs. For contractors, it provides a 24/7 automated sales assistant that turns website traffic into booked jobs without manual overhead, delivering immediate value to both parties.
-          </p>
-
-          {/* 3 Detailed 3D Rendered Images: Tap, Roof, and Electrical Appliance */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', marginTop: '24px' }}>
-            
-            {/* 3D IMAGE 1: TAP / FAUCET (Plumbing) */}
-            <div style={{ background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))', border: '1px solid rgba(56, 189, 248, 0.3)', borderRadius: '16px', padding: '24px 16px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.5)' }}>
-              <div style={{ width: '130px', height: '130px', borderRadius: '14px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'radial-gradient(circle, rgba(56, 189, 248, 0.18) 0%, transparent 70%)' }}>
-                <img src="/images/tap.png" alt="3D Plumbing Tap" style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5))' }} />
-              </div>
-              <span style={{ marginTop: '14px', fontWeight: '700', color: '#38bdf8', fontSize: '0.95rem' }}>Plumbing & Taps</span>
-            </div>
-
-            {/* 3D IMAGE 2: ROOF / HOUSE ROOFING (Black & White 3D) */}
-            <div style={{ background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))', border: '1px solid rgba(248, 250, 252, 0.25)', borderRadius: '16px', padding: '24px 16px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.5)' }}>
-              <div style={{ width: '130px', height: '130px', borderRadius: '14px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, transparent 70%)' }}>
-                <img src="/images/roof.png" alt="3D Black and White Roof" style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5))' }} />
-              </div>
-              <span style={{ marginTop: '14px', fontWeight: '700', color: '#f8fafc', fontSize: '0.95rem' }}>Roofing & Structure</span>
-            </div>
-
-            {/* 3D IMAGE 3: ELECTRICAL APPLIANCE */}
-            <div style={{ background: 'linear-gradient(145deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95))', border: '1px solid rgba(74, 222, 128, 0.3)', borderRadius: '16px', padding: '24px 16px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.5)' }}>
-              <div style={{ width: '130px', height: '130px', borderRadius: '14px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'radial-gradient(circle, rgba(74, 222, 128, 0.18) 0%, transparent 70%)' }}>
-                <img src="/images/appliance.png" alt="3D Electrical Appliance" style={{ width: '100%', height: '100%', objectFit: 'contain', filter: 'drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5))' }} />
-              </div>
-              <span style={{ marginTop: '14px', fontWeight: '700', color: '#4ade80', fontSize: '0.95rem' }}>Electrical & Appliances</span>
-            </div>
-
-          </div>
-        </div>
-
       </section>
 
       {/* Website Owner / Company Footer Details */}
@@ -387,18 +380,19 @@ export default function LoginPage() {
             <div>
               <h3 style={{ margin: '0 0 8px', color: '#f8fafc', fontSize: '1.1rem', fontWeight: '700' }}>LeadFast AI</h3>
               <p style={{ color: '#94a3b8', fontSize: '0.85rem', margin: 0, maxWidth: '320px' }}>
-                Instant AI lead response and scheduling automation system for home service professionals across the US.
+                Instant AI lead response and scheduling automation system for home service professionals. Powered by Ivula Technologies.
               </p>
             </div>
             <div style={{ display: 'grid', gap: '8px', fontSize: '0.88rem', color: '#cbd5e1' }}>
-              <strong style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Company Contact</strong>
-              <div>📞 <strong>Phone:</strong> <a href="tel:+18005550199" style={{ color: '#94a3b8', textDecoration: 'none' }}>+1 (800) 555-0199</a></div>
-              <div>✉️ <strong>Email:</strong> <a href="mailto:support@leadfast.ai" style={{ color: '#94a3b8', textDecoration: 'none' }}>support@leadfast.ai</a></div>
-              <div>📍 <strong>Address:</strong> 100 Enterprise Way, Suite 400, Austin, TX 78701</div>
+              <strong style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Ivula Technologies Contact</strong>
+              <div>🏢 <strong>Website / Owner:</strong> Ivula Technologies</div>
+              <div>💬 <strong>Phone / WhatsApp:</strong> <a href="https://wa.me/254743761460" target="_blank" rel="noopener noreferrer" style={{ color: '#94a3b8', textDecoration: 'none' }}>+254 743 761 460</a></div>
+              <div>✉️ <strong>Email:</strong> <a href="mailto:contact@ivula.co.ke" style={{ color: '#94a3b8', textDecoration: 'none' }}>contact@ivula.co.ke</a> / <a href="mailto:ivula@gmail.com" style={{ color: '#94a3b8', textDecoration: 'none' }}>ivula@gmail.com</a></div>
+              <div>📍 <strong>Address:</strong> Emperor Plaza, 05 Koinange Street, Nairobi, Kenya</div>
             </div>
           </div>
           <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '16px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', color: '#64748b', fontSize: '0.8rem' }}>
-            <span>© {new Date().getFullYear()} LeadFast AI Technologies Inc. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} LeadFast AI. All rights reserved. Owned & Operated by Ivula Technologies.</span>
             <span>HVAP Contractor Portal & Client Marketplace</span>
           </div>
         </div>
