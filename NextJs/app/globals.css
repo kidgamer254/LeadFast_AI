@@ -30,23 +30,23 @@ h1, h2, h3, h4, h5, h6, .shiny-gold-heading, .shiny-purple-heading {
   display: inline-block;
   background: linear-gradient(
     110deg,
-    #4c1d95 0%,
-    #6d28d9 20%,
-    #a855f7 35%,
-    #f3e8ff 48%,
+    #6d28d9 0%,
+    #8b5cf6 20%,
+    #c084fc 35%,
+    #f5f0ff 48%,
     #FFFFFF 50%,
-    #f3e8ff 52%,
-    #a855f7 65%,
-    #6d28d9 80%,
-    #4c1d95 100%
+    #f5f0ff 52%,
+    #c084fc 65%,
+    #8b5cf6 80%,
+    #6d28d9 100%
   );
   background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  animation: purpleTraverse 2s linear infinite;
-  text-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
+  animation: purpleTraverse 3.5s linear infinite;
+  text-shadow: 0 0 32px rgba(192, 132, 252, 0.45);
   margin-bottom: 12px;
 }
 
@@ -59,19 +59,19 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, .shiny-gold-he
   margin-top: 6px;
   background: linear-gradient(
     110deg,
-    #4c1d95 0%,
-    #6d28d9 20%,
-    #a855f7 35%,
-    #f3e8ff 48%,
+    #6d28d9 0%,
+    #8b5cf6 20%,
+    #c084fc 35%,
+    #f5f0ff 48%,
     #FFFFFF 50%,
-    #f3e8ff 52%,
-    #a855f7 65%,
-    #6d28d9 80%,
-    #4c1d95 100%
+    #f5f0ff 52%,
+    #c084fc 65%,
+    #8b5cf6 80%,
+    #6d28d9 100%
   );
   background-size: 200% 100%;
-  animation: purpleTraverse 2s linear infinite;
-  box-shadow: 0 1px 8px rgba(168, 85, 247, 0.5);
+  animation: purpleTraverse 3.5s linear infinite;
+  box-shadow: 0 1px 12px rgba(192, 132, 252, 0.75);
 }
 
 @keyframes purpleTraverse {
