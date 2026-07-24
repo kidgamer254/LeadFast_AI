@@ -1,3 +1,4 @@
+import { GoogleGenAI } from "@google/genai";
 import Anthropic from "@anthropic-ai/sdk";
 import { Resend } from "resend";
 import { supabase } from "@/lib/supabase";
@@ -5,23 +6,8 @@ import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   try {
-    // Check environment variables
-    if (!process.env.RESEND_API_KEY) {
-      throw new Error("Missing RESEND_API_KEY in .env.local");
-    }
-
-    if (!process.env.ANTHROPIC_API_KEY) {
-      throw new Error("Missing ANTHROPIC_API_KEY in .env.local");
-    }
-
-    // Instantiate SDKs lazily (inside handler) so a missing key at startup
-    // doesn't crash the module and return an HTML page instead of JSON.
-    const resend = new Resend(process.env.RESEND_API_KEY);
-    const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
-
     // Read request body
     const body = await request.json();
-
     const { name, email, phone, message, business_id, businessId } = body;
     const targetBusinessId = business_id || businessId || null;
 
@@ -35,7 +21,8 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
-    // 👇 Task 2: Save lead into Supabase if configured
+
+    // Save lead into Supabase if configured
     let leadData = null;
     if (supabase) {
       const { data, error: leadError } = await supabase
@@ -45,7 +32,7 @@ export async function POST(request: Request) {
             business_id: targetBusinessId,
             lead_name: name,
             lead_email: email,
-            lead_phone: phone,
+            lead_phone: phone || null,
             message: message,
             status: "received",
           },
@@ -53,7 +40,7 @@ export async function POST(request: Request) {
         .select();
 
       if (leadError) {
-        console.error("Failed to insert lead:", leadError);
+        console.error("Failed to insert lead into Supabase:", leadError);
         return NextResponse.json(
           {
             success: false,
@@ -66,67 +53,70 @@ export async function POST(request: Request) {
       leadData = data;
     }
 
-    console.log("Lead inserted:", leadData);
-    // 👇 Task 1: Test Supabase connection
-    /*const {data: supabaseData, error: supabaseError  } = await supabase
-      .from("leads")
-      .select("*")
-      .limit(1);
-    
-    if (supabaseError) {
-      console.error("Supabase connection failed:", supabaseError);
-    
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Could not connect to Supabase.",
-        },
-        { status: 500 }
-      );
-    }
-    
-    console.log("Supabase connection successful:", supabaseData);*/
-
-    console.log("========== NEW LEAD ==========");
-    console.log(body);
+    console.log("Lead successfully inserted:", leadData);
 
     let aiReply = "";
 
-    // Try Claude first
-    try {
-      const response = await anthropic.messages.create({
-        model: "claude-3-haiku-20240307",
-        max_tokens: 300,
-        messages: [
-          {
-            role: "user",
-            content: `
-You are writing a fast, friendly, and professional email response on behalf of the service business team.
+    // 1. Try Gemini AI if GEMINI_API_KEY is present
+    if (process.env.GEMINI_API_KEY) {
+      try {
+        const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+        const response = await ai.models.generateContent({
+          model: "gemini-2.5-flash",
+          contents: `
+You are writing a fast, friendly, and professional email response on behalf of LeadFast AI service team.
 
 A customer named ${name} submitted this message:
 "${message}"
 
 Write a warm, concise, and professional reply thanking them for reaching out, acknowledging their specific request, and letting them know a team member will follow up with them shortly. Do NOT mention that you are an AI, bot, assistant, or automated system. Write naturally as a real team representative.
-            `,
-          },
-        ],
-      });
+          `,
+        });
+        aiReply = response.text || "";
+        console.log("Gemini AI generated reply successfully.");
+      } catch (geminiError) {
+        console.error("Gemini AI generation warning:", geminiError);
+      }
+    }
 
-      aiReply = response.content
-        .filter((block: any) => block.type === "text")
-        .map((block: any) => block.text)
-        .join("\n");
+    // 2. Try Anthropic Claude if Gemini didn't run or failed
+    if (!aiReply && process.env.ANTHROPIC_API_KEY) {
+      try {
+        const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+        const response = await anthropic.messages.create({
+          model: "claude-3-haiku-20240307",
+          max_tokens: 300,
+          messages: [
+            {
+              role: "user",
+              content: `
+You are writing a fast, friendly, and professional email response on behalf of LeadFast AI service team.
 
-      console.log("Reply generated successfully.");
+A customer named ${name} submitted this message:
+"${message}"
 
-    } catch (claudeError) {
-      console.error("Reply generation error.");
-      console.error(claudeError);
+Write a warm, concise, and professional reply thanking them for reaching out, acknowledging their specific request, and letting them know a team member will follow up with them shortly. Do NOT mention that you are an AI, bot, assistant, or automated system. Write naturally as a real team representative.
+              `,
+            },
+          ],
+        });
 
-      // Fallback reply
+        aiReply = response.content
+          .filter((block: any) => block.type === "text")
+          .map((block: any) => block.text)
+          .join("\n");
+
+        console.log("Claude generated reply successfully.");
+      } catch (claudeError) {
+        console.error("Claude AI generation warning:", claudeError);
+      }
+    }
+
+    // 3. Fallback reply if AI services are unavailable
+    if (!aiReply) {
       aiReply = `Hello ${name},
 
-Thank you for contacting us.
+Thank you for contacting LeadFast AI.
 
 We have received your message:
 "${message}"
@@ -134,25 +124,28 @@ We have received your message:
 Our team is reviewing your request and will get back to you shortly.
 
 Kind regards,
-Service Team`;
+LeadFast AI Team`;
     }
 
-    // Send email using Resend (graceful check so email test limits don't crash lead submission)
-    try {
-      const { data, error } = await resend.emails.send({
-        from: "LeadFast <onboarding@resend.dev>",
-        to: email,
-        subject: "Thank you for contacting LeadFast AI",
-        text: aiReply,
-      });
+    // Send confirmation email via Resend if RESEND_API_KEY is present
+    if (process.env.RESEND_API_KEY) {
+      try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
+        const { error } = await resend.emails.send({
+          from: "LeadFast <onboarding@resend.dev>",
+          to: email,
+          subject: "Thank you for contacting LeadFast AI",
+          text: aiReply,
+        });
 
-      if (error) {
-        console.error("Resend Email Warning (Sandbox restriction):", error.message || error);
-      } else {
-        console.log("Email sent successfully.");
+        if (error) {
+          console.error("Resend Email Warning (Sandbox restriction):", error.message || error);
+        } else {
+          console.log("Email sent successfully.");
+        }
+      } catch (resendErr) {
+        console.error("Resend sending error caught gracefully:", resendErr);
       }
-    } catch (resendErr) {
-      console.error("Resend sending error caught gracefully:", resendErr);
     }
 
     return NextResponse.json({
