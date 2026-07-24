@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { useTypewriter } from '../hooks/useTypewriter';
 import { supabaseAnon as supabase, hasSupabaseConfig } from '@/lib/supabase';
 
 interface Contractor {
@@ -13,6 +14,7 @@ interface Contractor {
 }
 
 export default function ClientMarketplacePage() {
+  const [pageTitle, pageTitleDone] = useTypewriter('Browse Contractors & Submit Requests', 55, 300);
   const [contractors, setContractors] = useState<Contractor[]>([]);
   const [contractorsLoading, setContractorsLoading] = useState(true);
   const [selectedTrade, setSelectedTrade] = useState('All');
@@ -133,7 +135,11 @@ export default function ClientMarketplacePage() {
             <p style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '6px' }}>
               Client Portal · LeadFast AI
             </p>
-            <h1 style={{ margin: 0, fontSize: '1.8rem' }}>Browse Contractors & Submit Requests</h1>
+            <h1 style={{ margin: 0, fontSize: '1.8rem', minHeight: '1.2em' }}>
+              {pageTitle}
+              <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#38bdf8', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: pageTitleDone ? 0 : 1, animation: pageTitleDone ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
+            </h1>
+            <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
           </div>
           <nav className="nav" style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
             <a href="/login" style={{ background: 'rgba(255,255,255,0.06)', color: '#f8fafc', fontWeight: '500', padding: '8px 16px', borderRadius: '999px', textDecoration: 'none', border: '1px solid var(--border)' }}>

@@ -3,12 +3,6 @@ import { Resend } from "resend";
 import { supabase } from "@/lib/supabase";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY!,
-});
-
 export async function POST(request: Request) {
   try {
     // Check environment variables
@@ -19,6 +13,11 @@ export async function POST(request: Request) {
     if (!process.env.ANTHROPIC_API_KEY) {
       throw new Error("Missing ANTHROPIC_API_KEY in .env.local");
     }
+
+    // Instantiate SDKs lazily (inside handler) so a missing key at startup
+    // doesn't crash the module and return an HTML page instead of JSON.
+    const resend = new Resend(process.env.RESEND_API_KEY);
+    const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
     // Read request body
     const body = await request.json();

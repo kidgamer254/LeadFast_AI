@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTypewriter } from '../hooks/useTypewriter';
 import { useRouter } from 'next/navigation';
 import { supabaseAnon as supabase, hasSupabaseConfig } from '@/lib/supabase';
 
@@ -12,6 +13,9 @@ interface Business {
 type Step = 'role_select' | 'auth_form';
 
 export default function LoginPage() {
+  const [welcomeTitle, welcomeDone] = useTypewriter('Welcome to LeadFast AI', 60, 200);
+  const [contractorTitle, contractorDone] = useTypewriter('Contractor Login', 60, 200);
+  const [signUpTitle, signUpDone] = useTypewriter('Contractor Sign‑Up', 60, 200);
   const [step, setStep] = useState<Step>('role_select');
   const [role, setRole] = useState<'contractor' | 'client' | null>(null);
   
@@ -138,7 +142,19 @@ export default function LoginPage() {
   }
 
   return (
-    <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+    <main
+      style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justify: 'space-between',
+        backgroundImage: `linear-gradient(to bottom, rgba(7, 17, 31, 0.82), rgba(7, 17, 31, 0.92)), url('/images/roofing.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <section className="container" style={{ padding: '40px 16px', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '32px' }}>
         
         {/* Main Interactive Card: Role Selection / Auth */}
@@ -146,7 +162,11 @@ export default function LoginPage() {
           
           {step === 'role_select' ? (
             <div>
-              <h1 style={{ margin: '0 0 8px', fontSize: '2.2rem' }}>Welcome to LeadFast AI</h1>
+              <h1 style={{ margin: '0 0 8px', fontSize: '2.2rem', minHeight: '1.2em' }}>
+                {welcomeTitle}
+                <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#38bdf8', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: welcomeDone ? 0 : 1, animation: welcomeDone ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
+              </h1>
+              <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
               <p style={{ color: '#38bdf8', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '16px' }}>
                 Contractor & Client Access Portal
               </p>
@@ -252,8 +272,9 @@ export default function LoginPage() {
               <p style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '6px' }}>
                 Contractor Access
               </p>
-              <h1 style={{ margin: '0 0 8px', fontSize: '1.75rem' }}>
-                {isSignUp ? 'Contractor Sign‑Up' : 'Contractor Login'}
+              <h1 style={{ margin: '0 0 8px', fontSize: '1.75rem', minHeight: '1.2em' }}>
+                {isSignUp ? signUpTitle : contractorTitle}
+                <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#38bdf8', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: (isSignUp ? signUpDone : contractorDone) ? 0 : 1, animation: (isSignUp ? signUpDone : contractorDone) ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
               </h1>
               
               <div style={{ display: 'flex', gap: '10px', marginBottom: '18px' }}>

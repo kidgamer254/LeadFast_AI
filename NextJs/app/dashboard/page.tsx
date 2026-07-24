@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTypewriter } from '../hooks/useTypewriter';
 import { useRouter } from 'next/navigation';
 import LogoutButton from '../components/LogoutButton';
 import { supabaseAnon as supabase, hasSupabaseConfig } from '@/lib/supabase';
@@ -115,6 +116,12 @@ export default function ContractorDashboard() {
     ? leads 
     : leads.filter(l => l.status === filterStatus);
 
+  // Derive a stable title string for the typewriter
+  const dashboardTitle = business?.business_name || 'Contractor Dashboard';
+
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [animatedTitle, titleDone] = useTypewriter(dashboardTitle, 60, 300);
+
   return (
     <main className="min-h-screen bg-[#07111f] text-[#f8fafc] px-4 py-6 sm:px-6 lg:px-8">
       <section className="max-w-7xl mx-auto space-y-6">
@@ -125,9 +132,11 @@ export default function ContractorDashboard() {
             <p className="text-[#38bdf8] text-xs font-semibold tracking-widest uppercase mb-1">
               Private Contractor Workspace
             </p>
-            <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
-              {business?.business_name || 'Contractor Dashboard'}
+            <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight" style={{ minHeight: '1.3em' }}>
+              {animatedTitle}
+              <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#38bdf8', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: titleDone ? 0 : 1, animation: titleDone ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
             </h1>
+            <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
           </div>
           <nav className="flex items-center gap-3 flex-wrap w-full sm:w-auto justify-start sm:justify-end">
             <a
@@ -175,7 +184,7 @@ export default function ContractorDashboard() {
         <div className="panel card p-5 sm:p-6 rounded-2xl bg-[rgba(15,23,42,0.92)] border border-[rgba(148,163,184,0.2)] shadow-xl space-y-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div>
-              <h2 className="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+              <h2 className="text-lg sm:text-xl font-bold flex items-center gap-2" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>
                 <span>⚡</span> Website Embed Code & Business ID
               </h2>
               <p className="text-slate-400 text-xs sm:text-sm mt-1">
@@ -232,7 +241,7 @@ export default function ContractorDashboard() {
             readOnly
             rows={4}
             value={getEmbedSnippet()}
-            className="w-full font-mono text-xs sm:text-sm p-3.5 rounded-xl bg-[#0f172a]/90 border border-slate-800 text-sky-400 focus:outline-none focus:ring-2 focus:ring-sky-500/40 resize-y overflow-x-auto"
+            className="w-full font-mono text-xs sm:text-sm p-3.5 rounded-xl bg-[#0f172a]/90 text-sky-400 focus:outline-none resize-y overflow-x-auto"
             onClick={(e) => (e.target as HTMLTextAreaElement).select()}
           />
         </div>
@@ -241,7 +250,7 @@ export default function ContractorDashboard() {
         <div className="panel card p-5 sm:p-6 rounded-2xl bg-[rgba(15,23,42,0.92)] border border-[rgba(148,163,184,0.2)] shadow-xl space-y-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
             <div>
-              <h2 className="text-lg sm:text-xl font-bold text-white">My Incoming Leads</h2>
+              <h2 className="text-lg sm:text-xl font-bold" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>My Incoming Leads</h2>
               <p className="text-slate-400 text-xs sm:text-sm mt-0.5">Customer requests submitted for your services.</p>
             </div>
             {leads.length > 0 && (
@@ -329,7 +338,7 @@ export default function ContractorDashboard() {
               <div className="flex items-center gap-2.5">
                 <span className="text-2xl">⚡</span>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold text-white">Contractor Setup Walkthrough</h3>
+                  <h3 className="text-lg sm:text-xl font-bold" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>Contractor Setup Walkthrough</h3>
                   <p className="text-xs sm:text-sm text-sky-400">Step {onboardingStep} of 3</p>
                 </div>
               </div>
@@ -354,7 +363,7 @@ export default function ContractorDashboard() {
             {onboardingStep === 1 && (
               <div className="space-y-4">
                 <div className="space-y-1.5">
-                  <h4 className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
+                  <h4 className="text-base sm:text-lg font-semibold flex items-center gap-2" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>
                     <span>1️⃣</span> Copy Your Unique Vanilla JS Script Snippet
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
@@ -396,7 +405,7 @@ export default function ContractorDashboard() {
             {onboardingStep === 2 && (
               <div className="space-y-4">
                 <div className="space-y-1.5">
-                  <h4 className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
+                  <h4 className="text-base sm:text-lg font-semibold flex items-center gap-2" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>
                     <span>2️⃣</span> Paste the Script into Your Website
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
@@ -468,7 +477,7 @@ export default function ContractorDashboard() {
             {onboardingStep === 3 && (
               <div className="space-y-4">
                 <div className="space-y-1.5">
-                  <h4 className="text-base sm:text-lg font-semibold text-white flex items-center gap-2">
+                  <h4 className="text-base sm:text-lg font-semibold flex items-center gap-2" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>
                     <span>3️⃣</span> Test & Verify Lead Capture
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
