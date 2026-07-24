@@ -3,7 +3,7 @@
     <!-- Outer diffuse glow -->
     <filter id="outerGlow" x="-80%" y="-80%" width="260%" height="260%">
       <feGaussianBlur stdDeviation="2.5" result="blur1"/>
-      <feFlood flood-color="#F5A800" flood-opacity="0.7" result="color1"/>
+      <feFlood flood-color="#a855f7" flood-opacity="0.7" result="color1"/>
       <feComposite in="color1" in2="blur1" operator="in" result="glow1"/>
       <feMerge>
         <feMergeNode in="glow1"/>
@@ -20,18 +20,18 @@
       </feMerge>
     </filter>
 
-    <!-- Golden-brown gradient fill -->
+    <!-- Royal purple gradient fill -->
     <linearGradient id="zapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%"   stop-color="#FFD166"/>
-      <stop offset="40%"  stop-color="#D4870A"/>
-      <stop offset="100%" stop-color="#8B5E00"/>
+      <stop offset="0%"   stop-color="#e9d5ff"/>
+      <stop offset="40%"  stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#5b21b6"/>
     </linearGradient>
   </defs>
 
   <!-- Glow layer (blurred copy behind) -->
   <path
     d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"
-    fill="#F5A800"
+    fill="#a855f7"
     opacity="0.45"
     filter="url(#outerGlow)"
   />
@@ -40,7 +40,7 @@
   <path
     d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"
     fill="url(#zapGradient)"
-    stroke="#FFD166"
+    stroke="#e9d5ff"
     stroke-width="0.3"
     filter="url(#innerGlow)"
   />

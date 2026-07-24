@@ -24,34 +24,34 @@ body {
   background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.18), transparent 28%), var(--bg);
 }
 
-/* Shiny Golden Brown Headings with Traversing Light Animation (every 2s) + 1px Golden Underline */
-h1, h2, h3, h4, h5, h6, .shiny-gold-heading {
+/* Shiny Purple Headings with Traversing Light Animation (every 2s) + 1px Purple Underline */
+h1, h2, h3, h4, h5, h6, .shiny-gold-heading, .shiny-purple-heading {
   position: relative;
   display: inline-block;
   background: linear-gradient(
     110deg,
-    #8B5E00 0%,
-    #B37409 20%,
-    #D4870A 35%,
-    #FFF6D6 48%,
+    #4c1d95 0%,
+    #6d28d9 20%,
+    #a855f7 35%,
+    #f3e8ff 48%,
     #FFFFFF 50%,
-    #FFF6D6 52%,
-    #D4870A 65%,
-    #B37409 80%,
-    #8B5E00 100%
+    #f3e8ff 52%,
+    #a855f7 65%,
+    #6d28d9 80%,
+    #4c1d95 100%
   );
   background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
-  animation: goldTraverse 2s linear infinite;
-  text-shadow: 0 0 25px rgba(212, 135, 10, 0.15);
+  animation: purpleTraverse 2s linear infinite;
+  text-shadow: 0 0 25px rgba(168, 85, 247, 0.25);
   margin-bottom: 12px;
 }
 
-/* 1px shiny golden line underlining every heading */
-h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, .shiny-gold-heading::after {
+/* 1px shiny purple line underlining every heading */
+h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, .shiny-gold-heading::after, .shiny-purple-heading::after {
   content: '';
   display: block;
   width: 100%;
@@ -59,22 +59,22 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, .shiny-gold-he
   margin-top: 6px;
   background: linear-gradient(
     110deg,
-    #8B5E00 0%,
-    #B37409 20%,
-    #D4870A 35%,
-    #FFF6D6 48%,
+    #4c1d95 0%,
+    #6d28d9 20%,
+    #a855f7 35%,
+    #f3e8ff 48%,
     #FFFFFF 50%,
-    #FFF6D6 52%,
-    #D4870A 65%,
-    #B37409 80%,
-    #8B5E00 100%
+    #f3e8ff 52%,
+    #a855f7 65%,
+    #6d28d9 80%,
+    #4c1d95 100%
   );
   background-size: 200% 100%;
-  animation: goldTraverse 2s linear infinite;
-  box-shadow: 0 1px 8px rgba(212, 135, 10, 0.4);
+  animation: purpleTraverse 2s linear infinite;
+  box-shadow: 0 1px 8px rgba(168, 85, 247, 0.5);
 }
 
-@keyframes goldTraverse {
+@keyframes purpleTraverse {
   0% {
     background-position: 200% 0;
   }
@@ -152,15 +152,15 @@ input, textarea, select { width: 100%; padding: 11px 12px; border-radius: 10px; 
 input:focus, select:focus { outline: 2px solid rgba(56, 189, 248, 0.25); border-color: var(--accent-2); }
 
 textarea {
-  box-shadow: 0 0 16px rgba(212, 135, 10, 0.45), 0 4px 20px rgba(255, 209, 102, 0.2);
-  border: 1px solid rgba(212, 135, 10, 0.45) !important;
+  box-shadow: 0 0 16px rgba(168, 85, 247, 0.4), 0 4px 20px rgba(192, 132, 252, 0.2);
+  border: 1px solid rgba(168, 85, 247, 0.45) !important;
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 textarea:focus {
   outline: none !important;
-  box-shadow: 0 0 28px rgba(212, 135, 10, 0.8), 0 0 14px rgba(255, 209, 102, 0.6) !important;
-  border-color: #FFD166 !important;
+  box-shadow: 0 0 28px rgba(168, 85, 247, 0.75), 0 0 14px rgba(216, 180, 254, 0.6) !important;
+  border-color: #c084fc !important;
 }
 
 .nav { display: flex; gap: 10px; flex-wrap: wrap; }

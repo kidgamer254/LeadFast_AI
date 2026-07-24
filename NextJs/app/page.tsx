@@ -184,7 +184,7 @@ export default function LandingPage() {
         display: 'flex',
         flexDirection: 'column',
         background:
-          'radial-gradient(circle at 50% -20%, rgba(212, 135, 10, 0.15), transparent 60%), #07111f',
+          'radial-gradient(circle at 50% -20%, rgba(168, 85, 247, 0.18), transparent 60%), #07111f',
       }}
     >
       {/* Top Header Navigation */}
@@ -208,12 +208,12 @@ export default function LandingPage() {
                 width: '40px',
                 height: '40px',
                 borderRadius: '12px',
-                background: 'linear-gradient(135deg, rgba(212, 135, 10, 0.2), rgba(139, 94, 0, 0.4))',
-                border: '1px solid #D4870A',
+                background: 'linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(109, 40, 217, 0.4))',
+                border: '1px solid #a855f7',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                boxShadow: '0 0 15px rgba(212, 135, 10, 0.3)',
+                boxShadow: '0 0 15px rgba(168, 85, 247, 0.4)',
               }}
             >
               <img src="/icon.svg" alt="LeadFast AI Logo" style={{ width: '26px', height: '26px' }} />
@@ -244,15 +244,15 @@ export default function LandingPage() {
               gap: '8px',
               padding: '6px 16px',
               borderRadius: '999px',
-              background: 'rgba(212, 135, 10, 0.12)',
-              border: '1px solid rgba(212, 135, 10, 0.3)',
+              background: 'rgba(168, 85, 247, 0.15)',
+              border: '1px solid rgba(168, 85, 247, 0.35)',
               marginBottom: '24px',
             }}
           >
             <span
               style={{
                 fontSize: '0.85rem',
-                color: '#FFD166',
+                color: '#c084fc',
                 fontWeight: '600',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -280,7 +280,7 @@ export default function LandingPage() {
                 display: 'inline-block',
                 width: '3px',
                 height: '0.85em',
-                background: '#FFD166',
+                background: '#c084fc',
                 marginLeft: '4px',
                 verticalAlign: 'middle',
                 borderRadius: '2px',
