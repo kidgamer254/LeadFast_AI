@@ -229,7 +229,7 @@ export default function ContractorDashboard() {
                 className={`w-full sm:w-auto px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl text-white transition cursor-pointer shadow-md ${
                   copied 
                     ? 'bg-emerald-600' 
-                    : 'bg-gradient-to-r from-blue-600 to-sky-400 hover:opacity-90'
+                    : 'shiny-btn'
                 }`}
               >
                 {copied ? '✓ Snippet Copied!' : '📋 Copy Embed Code'}
@@ -344,6 +344,7 @@ export default function ContractorDashboard() {
               </div>
               <button
                 type="button"
+                data-plain="true"
                 onClick={closeOnboarding}
                 className="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white flex items-center justify-center transition cursor-pointer text-base"
                 aria-label="Close modal"
@@ -525,7 +526,7 @@ export default function ContractorDashboard() {
                 <button
                   type="button"
                   onClick={() => setOnboardingStep(s => s + 1)}
-                  className="px-5 py-2 text-xs sm:text-sm font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-sky-400 text-white hover:opacity-90 transition cursor-pointer"
+                  className="px-5 py-2 text-xs sm:text-sm font-semibold rounded-xl shiny-btn text-white transition cursor-pointer"
                 >
                   Next Step →
                 </button>

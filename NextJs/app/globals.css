@@ -83,27 +83,28 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, .shiny-gold-he
   }
 }
 
-/* Shiny Green Button with Greenish Shadow */
-.shiny-green-btn {
-  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+/* Shiny Yellow-Blue Button with Golden & Electric Blue Shadow */
+.shiny-green-btn, .shiny-btn, .shiny-yellow-blue-btn, .btn, button:not([data-plain="true"]) {
+  background: linear-gradient(135deg, #D4870A 0%, #f59e0b 30%, #0284c7 70%, #2563eb 100%) !important;
   color: #ffffff !important;
   font-weight: 700;
-  font-size: 1.1rem;
-  padding: 14px 32px;
+  font-size: 1rem;
+  padding: 12px 28px;
   border-radius: 999px;
-  border: 1px solid #34d399;
-  box-shadow: 0 0 25px rgba(16, 185, 129, 0.55), 0 4px 15px rgba(5, 150, 105, 0.4);
+  border: 1px solid rgba(255, 209, 102, 0.65) !important;
+  box-shadow: 0 0 22px rgba(212, 135, 10, 0.5), 0 4px 18px rgba(37, 99, 235, 0.45) !important;
   position: relative;
   overflow: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   text-decoration: none;
   cursor: pointer;
 }
 
-.shiny-green-btn::after {
+.shiny-green-btn::after, .shiny-btn::after, .shiny-yellow-blue-btn::after, .btn::after, button:not([data-plain="true"])::after {
   content: '';
   position: absolute;
   top: -50%;
@@ -113,7 +114,7 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, .shiny-gold-he
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.65) 50%,
+    rgba(255, 255, 255, 0.75) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   transform: rotate(25deg);
@@ -125,10 +126,10 @@ h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, .shiny-gold-he
   35%, 100% { left: 140%; }
 }
 
-.shiny-green-btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 0 35px rgba(16, 185, 129, 0.85), 0 8px 25px rgba(5, 150, 105, 0.6);
-  border-color: #6ee7b7;
+.shiny-green-btn:hover, .shiny-btn:hover, .shiny-yellow-blue-btn:hover, .btn:hover, button:not([data-plain="true"]):hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 0 32px rgba(255, 209, 102, 0.85), 0 6px 25px rgba(37, 99, 235, 0.75) !important;
+  border-color: #FFD166 !important;
 }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }

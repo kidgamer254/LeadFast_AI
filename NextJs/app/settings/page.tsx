@@ -263,7 +263,7 @@ export default function SettingsPage() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="justify-self-start px-5 py-2.5 text-sm font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-sky-400 text-white hover:opacity-90 transition cursor-pointer disabled:opacity-50"
+                  className="justify-self-start px-5 py-2.5 text-sm font-semibold rounded-xl shiny-btn text-white transition cursor-pointer disabled:opacity-50"
                 >
                   {saving ? 'Saving…' : 'Save Changes'}
                 </button>
@@ -329,7 +329,7 @@ export default function SettingsPage() {
                 <button
                   type="submit"
                   disabled={creatingBiz}
-                  className="justify-self-start px-5 py-2.5 text-sm font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-sky-400 text-white hover:opacity-90 transition cursor-pointer disabled:opacity-50"
+                  className="justify-self-start px-5 py-2.5 text-sm font-semibold rounded-xl shiny-btn text-white transition cursor-pointer disabled:opacity-50"
                 >
                   {creatingBiz ? 'Creating…' : 'Create Business'}
                 </button>

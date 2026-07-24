@@ -280,6 +280,7 @@ export default function LoginPage() {
               <div style={{ display: 'flex', gap: '10px', marginBottom: '18px' }}>
                 <button
                   type="button"
+                  data-plain="true"
                   onClick={() => { setIsSignUp(!isSignUp); setShowBizSelect(false); }}
                   style={{ background: 'transparent', border: '1px solid #38bdf8', color: '#38bdf8', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.85rem' }}
                 >
@@ -300,7 +301,7 @@ export default function LoginPage() {
                   <button
                     type="button"
                     className="btn"
-                    style={{ background: 'linear-gradient(135deg, #2563eb, #38bdf8)', color: 'white', padding: '10px 14px' }}
+                    style={{ color: 'white', padding: '10px 14px' }}
                     onClick={() => {
                       const chosen = businesses.find((b) => b.id === selectedBizId);
                       window.localStorage.setItem('hvap-business', JSON.stringify({ id: selectedBizId, name: chosen?.business_name }));
@@ -320,6 +321,7 @@ export default function LoginPage() {
                   {!isSignUp && (
                     <button
                       type="button"
+                      data-plain="true"
                       onClick={() => setUseMagicLink(!useMagicLink)}
                       style={{ fontSize: '0.8rem', background: 'none', border: 'none', color: '#38bdf8', cursor: 'pointer', textAlign: 'left' }}
                     >
@@ -367,7 +369,7 @@ export default function LoginPage() {
                   <button
                     type="submit"
                     className="btn"
-                    style={{ background: 'linear-gradient(135deg, #2563eb, #38bdf8)', color: 'white', padding: '12px 16px', marginTop: '6px' }}
+                    style={{ color: 'white', padding: '12px 16px', marginTop: '6px' }}
                     disabled={loading}
                   >
                     {loading ? 'Processing…' : isSignUp ? 'Sign Up' : useMagicLink ? 'Send Magic Link' : 'Sign In'}

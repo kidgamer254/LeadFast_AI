@@ -204,6 +204,7 @@ export default function ClientMarketplacePage() {
                           <span>🆔 UUID: <code style={{ color: '#38bdf8', background: 'rgba(15,23,42,0.6)', padding: '2px 6px', borderRadius: '4px' }}>{c.id}</code></span>
                           <button
                             type="button"
+                            data-plain="true"
                             onClick={() => {
                               navigator.clipboard.writeText(c.id);
                               setTargetBusinessUuid(c.id);
@@ -309,7 +310,7 @@ export default function ClientMarketplacePage() {
               <button
                 type="submit"
                 className="btn"
-                style={{ background: 'linear-gradient(135deg, #2563eb, #38bdf8)', color: 'white', padding: '12px 16px', fontWeight: '600', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
+                style={{ color: 'white', padding: '12px 16px', fontWeight: '600', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
                 disabled={loading}
               >
                 {loading ? (
