@@ -147,7 +147,7 @@ export default function LoginPage() {
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
-        justify: 'space-between',
+        justifyContent: 'space-between',
         backgroundImage: `linear-gradient(to bottom, rgba(7, 17, 31, 0.82), rgba(7, 17, 31, 0.92)), url('/images/roofing.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
