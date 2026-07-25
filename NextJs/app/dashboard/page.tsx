@@ -123,7 +123,16 @@ export default function ContractorDashboard() {
   const [animatedTitle, titleDone] = useTypewriter(dashboardTitle, 60, 300);
 
   return (
-    <main className="min-h-screen bg-[#07111f] text-[#f8fafc] px-4 py-6 sm:px-6 lg:px-8">
+    <main
+      className="min-h-screen text-[#f8fafc] px-4 py-6 sm:px-6 lg:px-8"
+      style={{
+        backgroundImage: `linear-gradient(to bottom, rgba(7, 17, 31, 0.78), rgba(7, 17, 31, 0.88)), url('/images/appliance.png')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <section className="max-w-7xl mx-auto space-y-6">
         
         {/* Header + Nav */}

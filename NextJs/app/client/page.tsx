@@ -127,7 +127,16 @@ export default function ClientMarketplacePage() {
   }
 
   return (
-    <main>
+    <main
+      style={{
+        minHeight: '100vh',
+        backgroundImage: `linear-gradient(to bottom, rgba(7, 17, 31, 0.75), rgba(7, 17, 31, 0.88)), url('/images/client.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <section className="container" style={{ padding: '24px 0 40px' }}>
         {/* Header + Nav */}
         <div className="panel card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '24px' }}>
