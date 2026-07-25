@@ -84,6 +84,7 @@ function TradeCarousel() {
 
   return (
     <div
+      className="trade-carousel-card"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(10px)',
@@ -93,7 +94,6 @@ function TradeCarousel() {
         borderRadius: '16px',
         padding: '20px',
         boxShadow: `0 0 32px ${trade.shadow}`,
-        minHeight: '440px',
         display: 'flex',
         flexDirection: 'column',
         gap: '16px',
@@ -154,18 +154,14 @@ function TradeCarousel() {
       </div>
 
       {/* Trade image */}
-      <div style={{ display: 'flex', justifyContent: 'center', flex: 1 }}>
+      <div style={{ display: 'flex', justifyContent: 'center', flex: 1, alignItems: 'center' }}>
         <img
           src={trade.img}
           alt={trade.alt}
+          className="trade-carousel-img"
           style={{
-            width: '100%',
-            maxWidth: '70%',
-            height: '300px',
             objectFit: 'contain',
-            borderRadius: '12px',
             border: `1px solid ${trade.imgBorder}`,
-            background: 'rgba(0,0,0,0.2)',
           }}
         />
       </div>
@@ -340,32 +336,11 @@ export default function LandingPage() {
           </div>
         </section>
 
-        {/* About Section with Animated Trade Carousel — two-column layout */}
+        {/* About Section with Animated Trade Carousel — two-column desktop / stacked mobile layout */}
         <section id="about" className="container" style={{ padding: '40px 0 20px' }}>
-          <div
-            className="about-grid"
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-              gap: '24px',
-              alignItems: 'start',
-            }}
-          >
+          <div className="about-grid">
             {/* Left column — About LeadFast AI */}
-            <div
-              className="panel card"
-              style={{
-                position: 'relative',
-                overflow: 'hidden',
-                border: '1px solid rgba(56, 189, 248, 0.2)',
-                borderRadius: '18px',
-                height: '100%',
-                backgroundImage: 'url(/images/About.jpg)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat',
-              }}
-            >
+            <div className="panel card about-card about-card-left">
               {/* Dark overlay for text clarity */}
               <div
                 style={{
@@ -377,8 +352,9 @@ export default function LandingPage() {
                 }}
               />
               {/* Content above overlay */}
-              <div style={{ position: 'relative', zIndex: 1, padding: '36px' }}>
+              <div className="about-card-content">
                 <h2
+                  className="about-card-title"
                   style={{
                     fontSize: '1.8rem',
                     color: '#ffffff',
@@ -408,17 +384,9 @@ export default function LandingPage() {
             </div>
 
             {/* Right column — Featured Contractor Specialties */}
-            <div
-              className="panel card"
-              style={{
-                padding: '36px',
-                background: 'rgba(15, 23, 42, 0.65)',
-                border: '1px solid rgba(56, 189, 248, 0.2)',
-                borderRadius: '18px',
-                height: '100%',
-              }}
-            >
+            <div className="panel card about-card about-card-right">
               <h2
+                className="about-card-title"
                 style={{
                   fontSize: '1.8rem',
                   color: '#f8fafc',
