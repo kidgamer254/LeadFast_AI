@@ -57,6 +57,14 @@ export async function POST(request: Request) {
 
     let aiReply = "";
 
+<<<<<<< HEAD
+    // Try Gemini first
+    try {
+      const response = await ai.models.generateContent({
+        model: "gemini-3.5-flash-lite",
+        contents: `
+You are an AI assistant for LeadFast AI.
+=======
     // 1. Try Gemini AI if GEMINI_API_KEY is present
     if (process.env.GEMINI_API_KEY) {
       try {
@@ -65,6 +73,7 @@ export async function POST(request: Request) {
           model: "gemini-2.5-flash",
           contents: `
 You are writing a fast, friendly, and professional email response on behalf of LeadFast AI service team.
+>>>>>>> 4afe64c2a40fb2a1a53a12c548db29b7c9b5a9c0
 
 A customer named ${name} submitted this message:
 "${message}"
