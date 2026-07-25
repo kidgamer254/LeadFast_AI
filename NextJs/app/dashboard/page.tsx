@@ -184,7 +184,7 @@ export default function ContractorDashboard() {
         <div className="panel card p-5 sm:p-6 rounded-2xl bg-[rgba(15,23,42,0.92)] border border-[rgba(148,163,184,0.2)] shadow-xl space-y-4">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <div>
-              <h2 className="text-lg sm:text-xl font-bold flex items-center gap-2" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>
+              <h2 className="text-lg sm:text-xl font-bold flex items-center gap-2" style={{ color: '#38bdf8' }}>
                 <span>⚡</span> Website Embed Code & Business ID
               </h2>
               <p className="text-slate-400 text-xs sm:text-sm mt-1">
@@ -250,7 +250,7 @@ export default function ContractorDashboard() {
         <div className="panel card p-5 sm:p-6 rounded-2xl bg-[rgba(15,23,42,0.92)] border border-[rgba(148,163,184,0.2)] shadow-xl space-y-4">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
             <div>
-              <h2 className="text-lg sm:text-xl font-bold" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>My Incoming Leads</h2>
+              <h2 className="text-lg sm:text-xl font-bold" style={{ color: '#38bdf8' }}>My Incoming Leads</h2>
               <p className="text-slate-400 text-xs sm:text-sm mt-0.5">Customer requests submitted for your services.</p>
             </div>
             {leads.length > 0 && (
@@ -338,7 +338,7 @@ export default function ContractorDashboard() {
               <div className="flex items-center gap-2.5">
                 <span className="text-2xl">⚡</span>
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>Contractor Setup Walkthrough</h3>
+                  <h3 className="text-lg sm:text-xl font-bold" style={{ color: '#38bdf8' }}>Contractor Setup Walkthrough</h3>
                   <p className="text-xs sm:text-sm text-sky-400">Step {onboardingStep} of 3</p>
                 </div>
               </div>
@@ -364,7 +364,7 @@ export default function ContractorDashboard() {
             {onboardingStep === 1 && (
               <div className="space-y-4">
                 <div className="space-y-1.5">
-                  <h4 className="text-base sm:text-lg font-semibold flex items-center gap-2" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>
+                  <h4 className="text-base sm:text-lg font-semibold flex items-center gap-2" style={{ color: '#f8fafc' }}>
                     <span>1️⃣</span> Copy Your Unique Vanilla JS Script Snippet
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
@@ -406,7 +406,7 @@ export default function ContractorDashboard() {
             {onboardingStep === 2 && (
               <div className="space-y-4">
                 <div className="space-y-1.5">
-                  <h4 className="text-base sm:text-lg font-semibold flex items-center gap-2" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>
+                  <h4 className="text-base sm:text-lg font-semibold flex items-center gap-2" style={{ color: '#f8fafc' }}>
                     <span>2️⃣</span> Paste the Script into Your Website
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
@@ -478,7 +478,7 @@ export default function ContractorDashboard() {
             {onboardingStep === 3 && (
               <div className="space-y-4">
                 <div className="space-y-1.5">
-                  <h4 className="text-base sm:text-lg font-semibold flex items-center gap-2" style={{ color: '#c0392b', textDecoration: 'underline', textDecorationColor: '#c0392b', textUnderlineOffset: '4px' }}>
+                  <h4 className="text-base sm:text-lg font-semibold flex items-center gap-2" style={{ color: '#f8fafc' }}>
                     <span>3️⃣</span> Test & Verify Lead Capture
                   </h4>
                   <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">

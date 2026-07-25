@@ -148,7 +148,7 @@ export default function LoginPage() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        backgroundImage: `linear-gradient(to bottom, rgba(7, 17, 31, 0.82), rgba(7, 17, 31, 0.92)), url('/images/roofing.jpg')`,
+        backgroundImage: `linear-gradient(to bottom, rgba(7, 17, 31, 0.42), rgba(7, 17, 31, 0.55)), url('/images/roofing.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -187,7 +187,7 @@ export default function LoginPage() {
                     borderRadius: '16px',
                     background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(56, 189, 248, 0.12))',
                     border: '1px solid rgba(56, 189, 248, 0.4)',
-                    color: 'white',
+                    color: '#0a0a0a',
                     textAlign: 'left',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
@@ -208,10 +208,10 @@ export default function LoginPage() {
                     }}
                   />
                   <div>
-                    <span style={{ fontSize: '1.2rem', fontWeight: '700', color: '#f8fafc', display: 'block', marginBottom: '2px' }}>
+                    <span style={{ fontSize: '1.2rem', fontWeight: '800', color: '#050505', display: 'block', marginBottom: '2px' }}>
                       I am a Contractor
                     </span>
-                    <span style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: '1.4', display: 'block' }}>
+                    <span style={{ fontSize: '0.88rem', fontWeight: '700', color: '#0a0a0a', lineHeight: '1.4', display: 'block' }}>
                       Sign in to your private dashboard to view your business leads and metrics.
                     </span>
                   </div>
@@ -228,7 +228,7 @@ export default function LoginPage() {
                     borderRadius: '16px',
                     background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.08))',
                     border: '1px solid rgba(52, 211, 153, 0.4)',
-                    color: 'white',
+                    color: '#0a0a0a',
                     textAlign: 'left',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
@@ -249,10 +249,10 @@ export default function LoginPage() {
                     }}
                   />
                   <div>
-                    <span style={{ fontSize: '1.2rem', fontWeight: '700', color: '#f8fafc', display: 'block', marginBottom: '2px' }}>
+                    <span style={{ fontSize: '1.2rem', fontWeight: '800', color: '#050505', display: 'block', marginBottom: '2px' }}>
                       I am a Client / Lead
                     </span>
-                    <span style={{ fontSize: '0.88rem', color: '#94a3b8', lineHeight: '1.4', display: 'block' }}>
+                    <span style={{ fontSize: '0.88rem', fontWeight: '700', color: '#0a0a0a', lineHeight: '1.4', display: 'block' }}>
                       Browse available contractors by trade and submit a service request.
                     </span>
                   </div>

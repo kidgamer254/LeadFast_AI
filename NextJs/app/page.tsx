@@ -236,7 +236,29 @@ export default function LandingPage() {
 
       <main style={{ flex: 1 }}>
         {/* Hero Section */}
-        <section className="container" style={{ padding: '80px 0 60px', textAlign: 'center' }}>
+        <section
+          style={{
+            position: 'relative',
+            padding: '80px 24px 60px',
+            textAlign: 'center',
+            overflow: 'hidden',
+            backgroundImage: 'url(/images/contractors1.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+          }}
+        >
+          {/* Dark overlay for text clarity */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background:
+                'linear-gradient(to bottom, rgba(7,17,31,0.30) 0%, rgba(7,17,31,0.38) 60%, rgba(7,17,31,0.55) 100%)',
+              zIndex: 0,
+            }}
+          />
+          <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <div
             style={{
               display: 'inline-flex',
@@ -315,51 +337,99 @@ export default function LandingPage() {
               </svg>
             </Link>
           </div>
+          </div>
         </section>
 
-        {/* About Section with Animated Trade Carousel */}
+        {/* About Section with Animated Trade Carousel — two-column layout */}
         <section id="about" className="container" style={{ padding: '40px 0 20px' }}>
           <div
-            className="panel card"
+            className="about-grid"
             style={{
-              padding: '36px',
-              background: 'rgba(15, 23, 42, 0.65)',
-              border: '1px solid rgba(56, 189, 248, 0.2)',
-              borderRadius: '18px',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+              gap: '24px',
+              alignItems: 'start',
             }}
           >
-            <h2
+            {/* Left column — About LeadFast AI */}
+            <div
+              className="panel card"
               style={{
-                fontSize: '1.8rem',
-                color: '#f8fafc',
-                marginBottom: '16px',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '10px',
+                position: 'relative',
+                overflow: 'hidden',
+                border: '1px solid rgba(56, 189, 248, 0.2)',
+                borderRadius: '18px',
+                height: '100%',
+                backgroundImage: 'url(/images/About.jpg)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
               }}
             >
-              <span>⚡</span> About LeadFast AI
-            </h2>
-            <p style={{ color: '#e2e8f0', fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px' }}>
-              <strong>LeadFast AI</strong> is an instant lead response system engineered specifically for home
-              service contractors like HVAC technicians, plumbers, electricians, and roofers. By intercepting
-              website contact form submissions and generating personalized, context-aware email replies within 30
-              seconds, LeadFast AI bridges the critical response-time gap when contractors are busy in the
-              field—ensuring no high-intent lead is lost to competitors while logging all interactions into a
-              streamlined business dashboard.
-            </p>
-            <p style={{ color: '#cbd5e1', fontSize: '0.96rem', lineHeight: '1.7', marginBottom: '28px' }}>
-              For clients, this means an end to waiting hours or days for quotes by receiving immediate,
-              intelligent answers tailored to their specific home service needs. For contractors, it provides a
-              24/7 automated sales assistant that turns website traffic into booked jobs without manual overhead,
-              delivering immediate value to both parties.
-            </p>
+              {/* Dark overlay for text clarity */}
+              <div
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background:
+                    'linear-gradient(to bottom, rgba(7,17,31,0.38) 0%, rgba(7,17,31,0.50) 60%, rgba(7,17,31,0.65) 100%)',
+                  zIndex: 0,
+                }}
+              />
+              {/* Content above overlay */}
+              <div style={{ position: 'relative', zIndex: 1, padding: '36px' }}>
+                <h2
+                  style={{
+                    fontSize: '1.8rem',
+                    color: '#ffffff',
+                    marginBottom: '16px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px',
+                  }}
+                >
+                  <span>⚡</span> About LeadFast AI
+                </h2>
+                <p style={{ color: '#ffffff', fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px' }}>
+                  <strong>LeadFast AI</strong> is an instant lead response system engineered specifically for home
+                  service contractors like HVAC technicians, plumbers, electricians, and roofers. By intercepting
+                  website contact form submissions and generating personalized, context-aware email replies within 30
+                  seconds, LeadFast AI bridges the critical response-time gap when contractors are busy in the
+                  field—ensuring no high-intent lead is lost to competitors while logging all interactions into a
+                  streamlined business dashboard.
+                </p>
+                <p style={{ color: '#e2e8f0', fontSize: '0.96rem', lineHeight: '1.7', marginBottom: '0' }}>
+                  For clients, this means an end to waiting hours or days for quotes by receiving immediate,
+                  intelligent answers tailored to their specific home service needs. For contractors, it provides a
+                  24/7 automated sales assistant that turns website traffic into booked jobs without manual overhead,
+                  delivering immediate value to both parties.
+                </p>
+              </div>
+            </div>
 
-            {/* Animated Trade Carousel */}
-            <div style={{ marginTop: '28px', paddingTop: '24px', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
-              <h3 style={{ fontSize: '1.25rem', margin: '0 0 16px', color: '#38bdf8' }}>
-                Featured Contractor Specialties Available
-              </h3>
+            {/* Right column — Featured Contractor Specialties */}
+            <div
+              className="panel card"
+              style={{
+                padding: '36px',
+                background: 'rgba(15, 23, 42, 0.65)',
+                border: '1px solid rgba(56, 189, 248, 0.2)',
+                borderRadius: '18px',
+                height: '100%',
+              }}
+            >
+              <h2
+                style={{
+                  fontSize: '1.8rem',
+                  color: '#f8fafc',
+                  marginBottom: '20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                }}
+              >
+                <span>🔧</span> Featured Contractor Specialties Available
+              </h2>
               <TradeCarousel />
             </div>
           </div>
