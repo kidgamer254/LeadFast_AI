@@ -70,7 +70,7 @@ export default function LeadsPage() {
       <section className="container" style={{ padding: '24px 0 40px' }}>
         <div className="panel card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '18px' }}>
           <div>
-            <p style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '6px' }}>Lead workspace</p>
+            <p style={{ color: '#0284c7', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '6px', fontWeight: '600' }}>Lead workspace</p>
             <h1 style={{ margin: 0, fontSize: '1.8rem' }}>Contractor lead queue</h1>
           </div>
           <nav className="nav" style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
@@ -91,13 +91,13 @@ export default function LeadsPage() {
                   {hasSupabaseConfig ? 'Live Database' : 'Sandbox (Local)'}
                 </span>
               </div>
-              <p style={{ color: '#94a3b8', margin: '4px 0 0' }}>
+              <p style={{ color: '#475569', margin: '4px 0 0' }}>
                 {hasSupabaseConfig ? 'Real-time contractor leads from Supabase.' : 'Local sandbox mode.'}
               </p>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               {hasSupabaseConfig && (
-                <button onClick={fetchLeads} disabled={loading} className="btn" style={{ padding: '6px 12px', fontSize: '0.85rem', background: 'rgba(255,255,255,0.05)', border: '1px solid var(--border)' }}>
+                <button onClick={fetchLeads} disabled={loading} className="btn" style={{ padding: '6px 12px', fontSize: '0.85rem', background: '#f1f5f9', color: '#0f172a', border: '1px solid var(--border)' }}>
                   {loading ? 'Refreshing...' : 'Refresh'}
                 </button>
               )}
@@ -112,18 +112,18 @@ export default function LeadsPage() {
 
           <div className="grid" style={{ gap: '12px' }}>
             {filteredLeads.length === 0 ? (
-              <p style={{ color: '#94a3b8' }}>No leads found.</p>
+              <p style={{ color: '#475569' }}>No leads found.</p>
             ) : filteredLeads.map((lead) => (
-              <div key={lead.id} style={{ border: '1px solid var(--border)', borderRadius: '14px', padding: '14px' }}>
+              <div key={lead.id} style={{ border: '1px solid var(--border)', borderRadius: '14px', padding: '14px', background: 'rgba(241, 245, 249, 0.6)' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', gap: '12px', flexWrap: 'wrap' }}>
                   <div>
-                    <div style={{ fontWeight: 700 }}>{lead.lead_name}</div>
-                    <div style={{ color: '#94a3b8', fontSize: '0.95rem' }}>{lead.lead_email}</div>
-                    {lead.lead_phone && <div style={{ color: '#94a3b8', fontSize: '0.95rem' }}>{lead.lead_phone}</div>}
+                    <div style={{ fontWeight: 700, color: '#0f172a' }}>{lead.lead_name}</div>
+                    <div style={{ color: '#475569', fontSize: '0.95rem' }}>{lead.lead_email}</div>
+                    {lead.lead_phone && <div style={{ color: '#475569', fontSize: '0.95rem' }}>{lead.lead_phone}</div>}
                   </div>
                   <span className={`badge ${lead.status === 'Booked' ? '' : 'warn'}`}>{lead.status}</span>
                 </div>
-                {lead.message && <p style={{ margin: '10px 0 0', color: '#e2e8f0' }}>{lead.message}</p>}
+                {lead.message && <p style={{ margin: '10px 0 0', color: '#1e293b' }}>{lead.message}</p>}
               </div>
             ))}
           </div>

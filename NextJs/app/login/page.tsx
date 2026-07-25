@@ -148,7 +148,7 @@ export default function LoginPage() {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-between',
-        backgroundImage: `linear-gradient(to bottom, rgba(7, 17, 31, 0.42), rgba(7, 17, 31, 0.55)), url('/images/roofing.jpg')`,
+        backgroundImage: `linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.72)), url('/images/roofing.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -164,14 +164,14 @@ export default function LoginPage() {
             <div>
               <h1 style={{ margin: '0 0 8px', fontSize: '2.2rem', minHeight: '1.2em' }}>
                 {welcomeTitle}
-                <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#38bdf8', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: welcomeDone ? 0 : 1, animation: welcomeDone ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
+                <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#0284c7', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: welcomeDone ? 0 : 1, animation: welcomeDone ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
               </h1>
               <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
-              <p style={{ color: '#38bdf8', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '16px' }}>
+              <p style={{ color: '#0284c7', fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '16px', fontWeight: '600' }}>
                 Contractor & Client Access Portal
               </p>
               <h2 style={{ margin: '0 0 12px', fontSize: '1.4rem' }}>How would you like to proceed?</h2>
-              <p style={{ color: '#94a3b8', marginBottom: '28px', lineHeight: '1.5' }}>
+              <p style={{ color: '#475569', marginBottom: '28px', lineHeight: '1.5' }}>
                 Please select your role to be directed to the appropriate portal.
               </p>
 
@@ -185,13 +185,13 @@ export default function LoginPage() {
                     gap: '16px',
                     padding: '20px',
                     borderRadius: '16px',
-                    background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(56, 189, 248, 0.12))',
-                    border: '1px solid rgba(56, 189, 248, 0.4)',
-                    color: '#0a0a0a',
+                    background: 'linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(56, 189, 248, 0.06))',
+                    border: '1px solid rgba(2, 132, 199, 0.3)',
+                    color: '#0f172a',
                     textAlign: 'left',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
-                    boxShadow: '0 8px 24px rgba(2, 6, 23, 0.3)'
+                    boxShadow: '0 6px 20px rgba(15, 23, 42, 0.05)'
                   }}
                 >
                   <img
@@ -202,16 +202,16 @@ export default function LoginPage() {
                       height: '60px',
                       borderRadius: '14px',
                       objectFit: 'cover',
-                      border: '2px solid #38bdf8',
-                      boxShadow: '0 4px 14px rgba(56, 189, 248, 0.35)',
+                      border: '2px solid #0284c7',
+                      boxShadow: '0 4px 12px rgba(2, 132, 199, 0.25)',
                       flexShrink: 0
                     }}
                   />
                   <div>
-                    <span style={{ fontSize: '1.2rem', fontWeight: '800', color: '#050505', display: 'block', marginBottom: '2px' }}>
+                    <span style={{ fontSize: '1.2rem', fontWeight: '800', color: '#0f172a', display: 'block', marginBottom: '2px' }}>
                       I am a Contractor
                     </span>
-                    <span style={{ fontSize: '0.88rem', fontWeight: '700', color: '#0a0a0a', lineHeight: '1.4', display: 'block' }}>
+                    <span style={{ fontSize: '0.88rem', fontWeight: '500', color: '#334155', lineHeight: '1.4', display: 'block' }}>
                       Sign in to your private dashboard to view your business leads and metrics.
                     </span>
                   </div>
@@ -226,13 +226,13 @@ export default function LoginPage() {
                     gap: '16px',
                     padding: '20px',
                     borderRadius: '16px',
-                    background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.08))',
+                    background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(5, 150, 105, 0.05))',
                     border: '1px solid rgba(52, 211, 153, 0.4)',
-                    color: '#0a0a0a',
+                    color: '#0f172a',
                     textAlign: 'left',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
-                    boxShadow: '0 8px 24px rgba(2, 6, 23, 0.3)'
+                    boxShadow: '0 6px 20px rgba(15, 23, 42, 0.05)'
                   }}
                 >
                   <img
@@ -243,16 +243,16 @@ export default function LoginPage() {
                       height: '60px',
                       borderRadius: '14px',
                       objectFit: 'cover',
-                      border: '2px solid #34d399',
-                      boxShadow: '0 4px 14px rgba(52, 211, 153, 0.35)',
+                      border: '2px solid #10b981',
+                      boxShadow: '0 4px 12px rgba(16, 185, 129, 0.25)',
                       flexShrink: 0
                     }}
                   />
                   <div>
-                    <span style={{ fontSize: '1.2rem', fontWeight: '800', color: '#050505', display: 'block', marginBottom: '2px' }}>
+                    <span style={{ fontSize: '1.2rem', fontWeight: '800', color: '#0f172a', display: 'block', marginBottom: '2px' }}>
                       I am a Client / Lead
                     </span>
-                    <span style={{ fontSize: '0.88rem', fontWeight: '700', color: '#0a0a0a', lineHeight: '1.4', display: 'block' }}>
+                    <span style={{ fontSize: '0.88rem', fontWeight: '500', color: '#334155', lineHeight: '1.4', display: 'block' }}>
                       Browse available contractors by trade and submit a service request.
                     </span>
                   </div>
@@ -264,17 +264,17 @@ export default function LoginPage() {
               <button
                 type="button"
                 onClick={() => setStep('role_select')}
-                style={{ background: 'none', border: 'none', color: '#38bdf8', cursor: 'pointer', padding: 0, marginBottom: '16px', fontSize: '0.9rem' }}
+                style={{ background: 'none', border: 'none', color: '#0284c7', cursor: 'pointer', padding: 0, marginBottom: '16px', fontSize: '0.9rem', fontWeight: '500' }}
               >
                 ← Back to role selection
               </button>
 
-              <p style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '6px' }}>
+              <p style={{ color: '#0284c7', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '6px', fontWeight: '600' }}>
                 Contractor Access
               </p>
               <h1 style={{ margin: '0 0 8px', fontSize: '1.75rem', minHeight: '1.2em' }}>
                 {isSignUp ? signUpTitle : contractorTitle}
-                <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#38bdf8', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: (isSignUp ? signUpDone : contractorDone) ? 0 : 1, animation: (isSignUp ? signUpDone : contractorDone) ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
+                <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#0284c7', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: (isSignUp ? signUpDone : contractorDone) ? 0 : 1, animation: (isSignUp ? signUpDone : contractorDone) ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
               </h1>
               
               <div style={{ display: 'flex', gap: '10px', marginBottom: '18px' }}>
@@ -282,7 +282,7 @@ export default function LoginPage() {
                   type="button"
                   data-plain="true"
                   onClick={() => { setIsSignUp(!isSignUp); setShowBizSelect(false); }}
-                  style={{ background: 'transparent', border: '1px solid #38bdf8', color: '#38bdf8', padding: '6px 12px', borderRadius: '4px', cursor: 'pointer', fontSize: '0.85rem' }}
+                  style={{ background: 'transparent', border: '1px solid #0284c7', color: '#0284c7', padding: '6px 12px', borderRadius: '6px', cursor: 'pointer', fontSize: '0.85rem', fontWeight: '600' }}
                 >
                   {isSignUp ? 'Switch to Login' : 'Create Account'}
                 </button>
@@ -291,7 +291,7 @@ export default function LoginPage() {
               {showBizSelect && businesses.length > 0 ? (
                 <div style={{ display: 'grid', gap: '12px' }}>
                   <label style={{ display: 'grid', gap: '6px' }}>
-                    <span>Select Business</span>
+                    <span style={{ color: '#475569', fontSize: '0.9rem' }}>Select Business</span>
                     <select value={selectedBizId} onChange={(e) => setSelectedBizId(e.target.value)}>
                       {businesses.map((biz) => (
                         <option key={biz.id} value={biz.id}>{biz.business_name}</option>
@@ -314,7 +314,7 @@ export default function LoginPage() {
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '12px' }}>
                   <label style={{ display: 'grid', gap: '6px' }}>
-                    <span>Email</span>
+                    <span style={{ color: '#475569', fontSize: '0.9rem' }}>Email</span>
                     <input required type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="contractor@company.com" />
                   </label>
 
@@ -323,7 +323,7 @@ export default function LoginPage() {
                       type="button"
                       data-plain="true"
                       onClick={() => setUseMagicLink(!useMagicLink)}
-                      style={{ fontSize: '0.8rem', background: 'none', border: 'none', color: '#38bdf8', cursor: 'pointer', textAlign: 'left' }}
+                      style={{ fontSize: '0.8rem', background: 'none', border: 'none', color: '#0284c7', cursor: 'pointer', textAlign: 'left', fontWeight: '500' }}
                     >
                       {useMagicLink ? 'Switch to Password' : 'Use Magic Link instead'}
                     </button>
@@ -331,7 +331,7 @@ export default function LoginPage() {
 
                   {(!useMagicLink || isSignUp) && (
                     <label style={{ display: 'grid', gap: '6px' }}>
-                      <span>Password</span>
+                      <span style={{ color: '#475569', fontSize: '0.9rem' }}>Password</span>
                       <input required={!useMagicLink} type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="••••••••" />
                     </label>
                   )}
@@ -339,23 +339,23 @@ export default function LoginPage() {
                   {isSignUp && (
                     <>
                       <label style={{ display: 'grid', gap: '6px' }}>
-                        <span>Business Name</span>
+                        <span style={{ color: '#475569', fontSize: '0.9rem' }}>Business Name</span>
                         <input required type="text" value={businessName} onChange={(e) => setBusinessName(e.target.value)} placeholder="Acme Plumbing Co." />
                       </label>
                       <label style={{ display: 'grid', gap: '6px' }}>
-                        <span>Trade</span>
+                        <span style={{ color: '#475569', fontSize: '0.9rem' }}>Trade</span>
                         <input type="text" value={businessTrade} onChange={(e) => setBusinessTrade(e.target.value)} placeholder="e.g. Plumbing, HVAC, Electrical" />
                       </label>
                       <label style={{ display: 'grid', gap: '6px' }}>
-                        <span>Business Contact Email</span>
+                        <span style={{ color: '#475569', fontSize: '0.9rem' }}>Business Contact Email</span>
                         <input type="email" value={businessContactEmail} onChange={(e) => setBusinessContactEmail(e.target.value)} placeholder="info@acme.com" />
                       </label>
                       <label style={{ display: 'grid', gap: '6px' }}>
-                        <span>Contact Phone</span>
+                        <span style={{ color: '#475569', fontSize: '0.9rem' }}>Contact Phone</span>
                         <input type="tel" value={businessContactPhone} onChange={(e) => setBusinessContactPhone(e.target.value)} placeholder="+1 555 1234" />
                       </label>
                       <label style={{ display: 'grid', gap: '6px' }}>
-                        <span>Plan</span>
+                        <span style={{ color: '#475569', fontSize: '0.9rem' }}>Plan</span>
                         <select value={businessPlan} onChange={(e) => setBusinessPlan(e.target.value)}>
                           <option value="">Select a plan (optional)</option>
                           <option value="starter">Starter</option>
@@ -381,10 +381,10 @@ export default function LoginPage() {
                 <p role="alert" style={{
                   marginTop: '12px',
                   color: message.includes('Unable') || message.includes('failed') || message.includes('Failed') || message.includes('exists') || message.includes('missing')
-                    ? '#fca5a5'
+                    ? '#dc2626'
                     : message.startsWith('Account') || message.includes('registered') || message.includes('created')
-                    ? '#86efac'
-                    : '#38bdf8'
+                    ? '#16a34a'
+                    : '#0284c7'
                 }}>
                   {message}
                 </p>
@@ -397,24 +397,24 @@ export default function LoginPage() {
       </section>
 
       {/* Website Owner / Company Footer Details */}
-      <footer style={{ background: '#090d16', borderTop: '1px solid var(--border)', padding: '32px 16px 24px', marginTop: '40px' }}>
+      <footer style={{ background: '#f1f5f9', borderTop: '1px solid var(--border)', padding: '32px 16px 24px', marginTop: '40px' }}>
         <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '20px' }}>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '24px' }}>
             <div>
-              <h3 style={{ margin: '0 0 8px', color: '#f8fafc', fontSize: '1.1rem', fontWeight: '700' }}>LeadFast AI</h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.85rem', margin: 0, maxWidth: '320px' }}>
+              <h3 style={{ margin: '0 0 8px', color: '#0f172a', fontSize: '1.1rem', fontWeight: '700' }}>LeadFast AI</h3>
+              <p style={{ color: '#475569', fontSize: '0.85rem', margin: 0, maxWidth: '320px' }}>
                 Instant AI lead response and scheduling automation system for home service professionals. Powered by Ivula Technologies.
               </p>
             </div>
-            <div style={{ display: 'grid', gap: '8px', fontSize: '0.88rem', color: '#cbd5e1' }}>
-              <strong style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Ivula Technologies Contact</strong>
+            <div style={{ display: 'grid', gap: '8px', fontSize: '0.88rem', color: '#334155' }}>
+              <strong style={{ color: '#0284c7', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>Ivula Technologies Contact</strong>
               <div>🏢 <strong>Website / Owner:</strong> Ivula Technologies</div>
-              <div>💬 <strong>Phone / WhatsApp:</strong> <a href="https://wa.me/254743761460" target="_blank" rel="noopener noreferrer" style={{ color: '#94a3b8', textDecoration: 'none' }}>+254 743 761 460</a></div>
-              <div>✉️ <strong>Email:</strong> <a href="mailto:contact@ivula.co.ke" style={{ color: '#94a3b8', textDecoration: 'none' }}>contact@ivula.co.ke</a> / <a href="mailto:ivula@gmail.com" style={{ color: '#94a3b8', textDecoration: 'none' }}>ivula@gmail.com</a></div>
+              <div>💬 <strong>Phone / WhatsApp:</strong> <a href="https://wa.me/254743761460" target="_blank" rel="noopener noreferrer" style={{ color: '#0284c7', textDecoration: 'none' }}>+254 743 761 460</a></div>
+              <div>✉️ <strong>Email:</strong> <a href="mailto:contact@ivula.co.ke" style={{ color: '#0284c7', textDecoration: 'none' }}>contact@ivula.co.ke</a> / <a href="mailto:ivula@gmail.com" style={{ color: '#0284c7', textDecoration: 'none' }}>ivula@gmail.com</a></div>
               <div>📍 <strong>Address:</strong> Emperor Plaza, 05 Koinange Street, Nairobi, Kenya</div>
             </div>
           </div>
-          <div style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '16px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', color: '#64748b', fontSize: '0.8rem' }}>
+          <div style={{ borderTop: '1px solid rgba(0, 0, 0, 0.08)', paddingTop: '16px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', color: '#64748b', fontSize: '0.8rem' }}>
             <span>© {new Date().getFullYear()} LeadFast AI. All rights reserved. Owned & Operated by Ivula Technologies.</span>
             <span>HVAP Contractor Portal & Client Marketplace</span>
           </div>

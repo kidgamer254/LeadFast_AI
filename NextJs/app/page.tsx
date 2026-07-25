@@ -89,11 +89,11 @@ function TradeCarousel() {
         opacity: visible ? 1 : 0,
         transform: visible ? 'translateY(0)' : 'translateY(10px)',
         transition: 'opacity 0.3s ease, transform 0.3s ease',
-        background: 'rgba(30, 41, 59, 0.6)',
+        background: 'rgba(255, 255, 255, 0.9)',
         border: `1px solid ${trade.border}`,
         borderRadius: '16px',
         padding: '20px',
-        boxShadow: `0 0 32px ${trade.shadow}`,
+        boxShadow: `0 8px 24px ${trade.shadow}`,
         display: 'flex',
         flexDirection: 'column',
         gap: '16px',
@@ -108,7 +108,7 @@ function TradeCarousel() {
               width: i === current ? '22px' : '7px',
               height: '7px',
               borderRadius: '999px',
-              background: i === current ? trade.accent : 'rgba(255,255,255,0.2)',
+              background: i === current ? trade.accent : 'rgba(0,0,0,0.15)',
               transition: 'all 0.3s ease',
               display: 'inline-block',
             }}
@@ -144,10 +144,10 @@ function TradeCarousel() {
           >
             Specialty {trade.num} of {TRADES.length}
           </div>
-          <div style={{ fontWeight: '700', color: '#f8fafc', fontSize: '1.05rem' }}>
+          <div style={{ fontWeight: '700', color: '#0f172a', fontSize: '1.05rem' }}>
             {trade.num}. {trade.title}
           </div>
-          <div style={{ color: '#94a3b8', fontSize: '0.88rem', marginTop: '4px', lineHeight: '1.5' }}>
+          <div style={{ color: '#475569', fontSize: '0.88rem', marginTop: '4px', lineHeight: '1.5' }}>
             {trade.desc}
           </div>
         </div>
@@ -180,14 +180,14 @@ export default function LandingPage() {
         display: 'flex',
         flexDirection: 'column',
         background:
-          'radial-gradient(circle at 50% -20%, rgba(168, 85, 247, 0.18), transparent 60%), #07111f',
+          'radial-gradient(circle at 50% -20%, rgba(2, 132, 199, 0.08), transparent 60%), #f8fafc',
       }}
     >
       {/* Top Header Navigation */}
       <header
         style={{
           borderBottom: '1px solid var(--border)',
-          background: 'rgba(15, 23, 42, 0.75)',
+          background: 'rgba(255, 255, 255, 0.88)',
           backdropFilter: 'blur(12px)',
           position: 'sticky',
           top: 0,
@@ -220,9 +220,54 @@ export default function LandingPage() {
           </div>
 
           <nav className="nav" style={{ alignItems: 'center' }}>
-            <a href="#features">Features</a>
-            <a href="#marketplace">Contractor Solutions</a>
-            <a href="#contact">Owner Contact</a>
+            <a
+              href="#features"
+              style={{
+                color: '#4f46e5',
+                fontWeight: '700',
+                padding: '8px 14px',
+                borderRadius: '8px',
+                fontSize: '0.92rem',
+                letterSpacing: '-0.01em',
+                transition: 'background 0.2s ease',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = 'rgba(79,70,229,0.08)')}
+              onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+            >
+              Features
+            </a>
+            <a
+              href="#marketplace"
+              style={{
+                color: '#312e81',
+                fontWeight: '700',
+                padding: '8px 14px',
+                borderRadius: '8px',
+                fontSize: '0.92rem',
+                letterSpacing: '-0.01em',
+                transition: 'background 0.2s ease',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = 'rgba(49,46,129,0.08)')}
+              onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+            >
+              Contractor Solutions
+            </a>
+            <a
+              href="#contact"
+              style={{
+                color: '#1e3a8a',
+                fontWeight: '700',
+                padding: '8px 14px',
+                borderRadius: '8px',
+                fontSize: '0.92rem',
+                letterSpacing: '-0.01em',
+                transition: 'background 0.2s ease',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.background = 'rgba(30,58,138,0.08)')}
+              onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+            >
+              Owner Contact
+            </a>
             <Link href="/login" className="shiny-green-btn" style={{ padding: '8px 20px', fontSize: '0.9rem' }}>
               Portal Login →
             </Link>
@@ -244,13 +289,13 @@ export default function LandingPage() {
             backgroundRepeat: 'no-repeat',
           }}
         >
-          {/* Dark overlay for text clarity */}
+          {/* Light overlay for text clarity */}
           <div
             style={{
               position: 'absolute',
               inset: 0,
               background:
-                'linear-gradient(to bottom, rgba(7,17,31,0.30) 0%, rgba(7,17,31,0.38) 60%, rgba(7,17,31,0.55) 100%)',
+                'linear-gradient(to bottom, rgba(248, 250, 252, 0.58) 0%, rgba(241, 245, 249, 0.70) 60%, rgba(241, 245, 249, 0.82) 100%)',
               zIndex: 0,
             }}
           />
@@ -262,15 +307,15 @@ export default function LandingPage() {
               gap: '8px',
               padding: '6px 16px',
               borderRadius: '999px',
-              background: 'rgba(168, 85, 247, 0.15)',
-              border: '1px solid rgba(168, 85, 247, 0.35)',
+              background: 'rgba(2, 132, 199, 0.12)',
+              border: '1px solid rgba(2, 132, 199, 0.3)',
               marginBottom: '24px',
             }}
           >
             <span
               style={{
                 fontSize: '0.85rem',
-                color: '#c084fc',
+                color: '#0369a1',
                 fontWeight: '600',
                 textTransform: 'uppercase',
                 letterSpacing: '0.1em',
@@ -298,7 +343,7 @@ export default function LandingPage() {
                 display: 'inline-block',
                 width: '3px',
                 height: '0.85em',
-                background: '#c084fc',
+                background: '#7e22ce',
                 marginLeft: '4px',
                 verticalAlign: 'middle',
                 borderRadius: '2px',
@@ -312,7 +357,7 @@ export default function LandingPage() {
           <p
             style={{
               fontSize: '1.2rem',
-              color: '#94a3b8',
+              color: '#475569',
               maxWidth: '760px',
               margin: '0 auto 40px',
               lineHeight: 1.7,
@@ -341,13 +386,13 @@ export default function LandingPage() {
           <div className="about-grid">
             {/* Left column — About LeadFast AI */}
             <div className="panel card about-card about-card-left">
-              {/* Dark overlay for text clarity */}
+              {/* Light overlay for text clarity */}
               <div
                 style={{
                   position: 'absolute',
                   inset: 0,
                   background:
-                    'linear-gradient(to bottom, rgba(7,17,31,0.38) 0%, rgba(7,17,31,0.50) 60%, rgba(7,17,31,0.65) 100%)',
+                    'linear-gradient(to bottom, rgba(248, 250, 252, 0.62) 0%, rgba(241, 245, 249, 0.74) 60%, rgba(241, 245, 249, 0.82) 100%)',
                   zIndex: 0,
                 }}
               />
@@ -357,7 +402,7 @@ export default function LandingPage() {
                   className="about-card-title"
                   style={{
                     fontSize: '1.8rem',
-                    color: '#ffffff',
+                    color: '#0f172a',
                     marginBottom: '16px',
                     display: 'flex',
                     alignItems: 'center',
@@ -366,7 +411,7 @@ export default function LandingPage() {
                 >
                   <span>⚡</span> About LeadFast AI
                 </h2>
-                <p style={{ color: '#ffffff', fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px' }}>
+                <p style={{ color: '#1e293b', fontSize: '1rem', lineHeight: '1.7', marginBottom: '16px' }}>
                   <strong>LeadFast AI</strong> is an instant lead response system engineered specifically for home
                   service contractors like HVAC technicians, plumbers, electricians, and roofers. By intercepting
                   website contact form submissions and generating personalized, context-aware email replies within 30
@@ -374,7 +419,7 @@ export default function LandingPage() {
                   field—ensuring no high-intent lead is lost to competitors while logging all interactions into a
                   streamlined business dashboard.
                 </p>
-                <p style={{ color: '#e2e8f0', fontSize: '0.96rem', lineHeight: '1.7', marginBottom: '0' }}>
+                <p style={{ color: '#334155', fontSize: '0.96rem', lineHeight: '1.7', marginBottom: '0' }}>
                   For clients, this means an end to waiting hours or days for quotes by receiving immediate,
                   intelligent answers tailored to their specific home service needs. For contractors, it provides a
                   24/7 automated sales assistant that turns website traffic into booked jobs without manual overhead,
@@ -389,7 +434,7 @@ export default function LandingPage() {
                 className="about-card-title"
                 style={{
                   fontSize: '1.8rem',
-                  color: '#f8fafc',
+                  color: '#0f172a',
                   marginBottom: '20px',
                   display: 'flex',
                   alignItems: 'center',
@@ -407,7 +452,7 @@ export default function LandingPage() {
         <section id="features" className="container" style={{ padding: '40px 0 60px' }}>
           <div style={{ textAlign: 'center', marginBottom: '48px' }}>
             <h2 style={{ fontSize: '2.2rem', margin: '0 0 12px' }}>Comprehensive Platform Overview</h2>
-            <p style={{ color: '#94a3b8', fontSize: '1.05rem', maxWidth: '640px', margin: '0 auto' }}>
+            <p style={{ color: '#475569', fontSize: '1.05rem', maxWidth: '640px', margin: '0 auto' }}>
               Discover how LeadFast AI streamlines lead ingestion, intelligent contractor matching, and request
               tracking.
             </p>
@@ -420,8 +465,8 @@ export default function LandingPage() {
                   width: '48px',
                   height: '48px',
                   borderRadius: '12px',
-                  background: 'rgba(37, 99, 235, 0.15)',
-                  border: '1px solid rgba(56, 189, 248, 0.3)',
+                  background: 'rgba(2, 132, 199, 0.1)',
+                  border: '1px solid rgba(2, 132, 199, 0.25)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -432,7 +477,7 @@ export default function LandingPage() {
                 🎯
               </div>
               <h3 style={{ fontSize: '1.3rem', margin: '0 0 10px' }}>Instant Lead Qualification</h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
                 Client service requests are parsed and structured immediately by AI algorithms to determine job
                 urgency, scope, and trade requirements without delays.
               </p>
@@ -444,8 +489,8 @@ export default function LandingPage() {
                   width: '48px',
                   height: '48px',
                   borderRadius: '12px',
-                  background: 'rgba(34, 197, 94, 0.15)',
-                  border: '1px solid rgba(34, 197, 94, 0.3)',
+                  background: 'rgba(22, 163, 74, 0.1)',
+                  border: '1px solid rgba(22, 163, 74, 0.25)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -456,7 +501,7 @@ export default function LandingPage() {
                 ⚡
               </div>
               <h3 style={{ fontSize: '1.3rem', margin: '0 0 10px' }}>Smart Contractor Dispatch</h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
                 Directly targets registered contractors by Business UUID or matching trade discipline (Plumbing,
                 HVAC, Electrical, General Contracting).
               </p>
@@ -468,8 +513,8 @@ export default function LandingPage() {
                   width: '48px',
                   height: '48px',
                   borderRadius: '12px',
-                  background: 'rgba(212, 135, 10, 0.15)',
-                  border: '1px solid rgba(212, 135, 10, 0.3)',
+                  background: 'rgba(217, 119, 6, 0.1)',
+                  border: '1px solid rgba(217, 119, 6, 0.25)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -480,7 +525,7 @@ export default function LandingPage() {
                 📊
               </div>
               <h3 style={{ fontSize: '1.3rem', margin: '0 0 10px' }}>Interactive Dashboard &amp; CRM</h3>
-              <p style={{ color: '#94a3b8', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
+              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>
                 Contractors access a private portal to view incoming leads, manage customer inquiries, update
                 status, and review business analytics.
               </p>
@@ -494,18 +539,18 @@ export default function LandingPage() {
             className="panel card"
             style={{
               padding: '40px',
-              background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.8))',
+              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(241, 245, 249, 0.95))',
             }}
           >
             <div style={{ textAlign: 'center', marginBottom: '36px' }}>
               <h2 style={{ fontSize: '2rem', margin: '0 0 8px' }}>How LeadFast AI Works</h2>
-              <p style={{ color: '#94a3b8', margin: 0 }}>A seamless 3-step pipeline for clients and contractors alike.</p>
+              <p style={{ color: '#475569', margin: 0 }}>A seamless 3-step pipeline for clients and contractors alike.</p>
             </div>
 
             <div className="grid grid-3" style={{ gap: '24px' }}>
               <div
                 style={{
-                  background: 'rgba(15, 23, 42, 0.6)',
+                  background: 'rgba(255, 255, 255, 0.8)',
                   padding: '20px',
                   borderRadius: '14px',
                   border: '1px solid var(--border)',
@@ -514,7 +559,7 @@ export default function LandingPage() {
                 <div
                   style={{
                     fontSize: '0.8rem',
-                    color: '#38bdf8',
+                    color: '#0284c7',
                     fontWeight: '700',
                     textTransform: 'uppercase',
                     marginBottom: '8px',
@@ -522,15 +567,15 @@ export default function LandingPage() {
                 >
                   Step 01
                 </div>
-                <h4 style={{ fontSize: '1.1rem', margin: '0 0 8px' }}>Browse &amp; Submit Request</h4>
-                <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: 0, lineHeight: 1.5 }}>
+                <h4 style={{ fontSize: '1.1rem', margin: '0 0 8px', color: '#0f172a' }}>Browse &amp; Submit Request</h4>
+                <p style={{ color: '#475569', fontSize: '0.9rem', margin: 0, lineHeight: 1.5 }}>
                   Clients browse verified contractors or submit a trade request via the Client Portal.
                 </p>
               </div>
 
               <div
                 style={{
-                  background: 'rgba(15, 23, 42, 0.6)',
+                  background: 'rgba(255, 255, 255, 0.8)',
                   padding: '20px',
                   borderRadius: '14px',
                   border: '1px solid var(--border)',
@@ -539,7 +584,7 @@ export default function LandingPage() {
                 <div
                   style={{
                     fontSize: '0.8rem',
-                    color: '#FFD166',
+                    color: '#d97706',
                     fontWeight: '700',
                     textTransform: 'uppercase',
                     marginBottom: '8px',
@@ -547,15 +592,15 @@ export default function LandingPage() {
                 >
                   Step 02
                 </div>
-                <h4 style={{ fontSize: '1.1rem', margin: '0 0 8px' }}>Automated AI Matching</h4>
-                <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: 0, lineHeight: 1.5 }}>
+                <h4 style={{ fontSize: '1.1rem', margin: '0 0 8px', color: '#0f172a' }}>Automated AI Matching</h4>
+                <p style={{ color: '#475569', fontSize: '0.9rem', margin: 0, lineHeight: 1.5 }}>
                   LeadFast AI evaluates request parameters and sends direct notifications to matched businesses.
                 </p>
               </div>
 
               <div
                 style={{
-                  background: 'rgba(15, 23, 42, 0.6)',
+                  background: 'rgba(255, 255, 255, 0.8)',
                   padding: '20px',
                   borderRadius: '14px',
                   border: '1px solid var(--border)',
@@ -564,7 +609,7 @@ export default function LandingPage() {
                 <div
                   style={{
                     fontSize: '0.8rem',
-                    color: '#34d399',
+                    color: '#16a34a',
                     fontWeight: '700',
                     textTransform: 'uppercase',
                     marginBottom: '8px',
@@ -572,8 +617,8 @@ export default function LandingPage() {
                 >
                   Step 03
                 </div>
-                <h4 style={{ fontSize: '1.1rem', margin: '0 0 8px' }}>Instant Lead Delivery</h4>
-                <p style={{ color: '#94a3b8', fontSize: '0.9rem', margin: 0, lineHeight: 1.5 }}>
+                <h4 style={{ fontSize: '1.1rem', margin: '0 0 8px', color: '#0f172a' }}>Instant Lead Delivery</h4>
+                <p style={{ color: '#475569', fontSize: '0.9rem', margin: 0, lineHeight: 1.5 }}>
                   Contractors view job details immediately in their dashboard and connect directly with clients.
                 </p>
               </div>
@@ -588,11 +633,11 @@ export default function LandingPage() {
             style={{
               padding: '40px 24px',
               background:
-                'radial-gradient(circle at center, rgba(16, 185, 129, 0.12), transparent 70%), var(--panel)',
+                'radial-gradient(circle at center, rgba(16, 185, 129, 0.08), transparent 70%), var(--panel)',
             }}
           >
             <h2 style={{ fontSize: '1.8rem', margin: '0 0 12px' }}>Ready to Get Started?</h2>
-            <p style={{ color: '#94a3b8', maxWidth: '540px', margin: '0 auto 28px' }}>
+            <p style={{ color: '#475569', maxWidth: '540px', margin: '0 auto 28px' }}>
               Log in to access your business dashboard or submit a client service request today.
             </p>
             <Link href="/login" className="shiny-green-btn">
@@ -606,7 +651,7 @@ export default function LandingPage() {
       <footer
         id="contact"
         style={{
-          background: 'rgba(11, 19, 36, 0.95)',
+          background: 'rgba(241, 245, 249, 0.95)',
           borderTop: '1px solid var(--border)',
           padding: '60px 0 30px',
         }}
@@ -624,7 +669,7 @@ export default function LandingPage() {
               </div>
               <p
                 style={{
-                  color: '#94a3b8',
+                  color: '#475569',
                   lineHeight: 1.6,
                   fontSize: '0.95rem',
                   maxWidth: '480px',
@@ -641,7 +686,7 @@ export default function LandingPage() {
             </div>
 
             {/* Contacts */}
-            <div className="panel card" style={{ padding: '24px', background: 'rgba(15, 23, 42, 0.8)' }}>
+            <div className="panel card" style={{ padding: '24px', background: 'rgba(255, 255, 255, 0.9)' }}>
               <h3 style={{ fontSize: '1.2rem', margin: '0 0 16px' }}>Website Owner &amp; Support Contact</h3>
               <div style={{ display: 'grid', gap: '14px', fontSize: '0.9rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -650,7 +695,7 @@ export default function LandingPage() {
                     <div style={{ color: '#64748b', fontSize: '0.75rem', textTransform: 'uppercase' }}>
                       Website Owner / Company
                     </div>
-                    <div style={{ fontWeight: '600', color: '#f8fafc' }}>Ivula Technologies</div>
+                    <div style={{ fontWeight: '600', color: '#0f172a' }}>Ivula Technologies</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -663,7 +708,7 @@ export default function LandingPage() {
                       href="https://wa.me/254743761460"
                       target="_blank"
                       rel="noopener noreferrer"
-                      style={{ color: '#38bdf8', fontWeight: '500' }}
+                      style={{ color: '#0284c7', fontWeight: '500' }}
                     >
                       +254 743 761 460
                     </a>
@@ -675,12 +720,12 @@ export default function LandingPage() {
                     <div style={{ color: '#64748b', fontSize: '0.75rem', textTransform: 'uppercase' }}>
                       Email Address
                     </div>
-                    <div style={{ color: '#38bdf8', fontWeight: '500' }}>
-                      <a href="mailto:contact@ivula.co.ke" style={{ color: '#38bdf8' }}>
+                    <div style={{ color: '#0284c7', fontWeight: '500' }}>
+                      <a href="mailto:contact@ivula.co.ke" style={{ color: '#0284c7' }}>
                         contact@ivula.co.ke
                       </a>{' '}
                       /{' '}
-                      <a href="mailto:ivula@gmail.com" style={{ color: '#38bdf8' }}>
+                      <a href="mailto:ivula@gmail.com" style={{ color: '#0284c7' }}>
                         ivula@gmail.com
                       </a>
                     </div>
@@ -692,7 +737,7 @@ export default function LandingPage() {
                     <div style={{ color: '#64748b', fontSize: '0.75rem', textTransform: 'uppercase' }}>
                       Office Address
                     </div>
-                    <div style={{ color: '#cbd5e1' }}>
+                    <div style={{ color: '#334155' }}>
                       Emperor Plaza, 05 Koinange Street, Nairobi, Kenya
                     </div>
                   </div>
@@ -703,7 +748,7 @@ export default function LandingPage() {
                     <div style={{ color: '#64748b', fontSize: '0.75rem', textTransform: 'uppercase' }}>
                       Support Hours
                     </div>
-                    <div style={{ color: '#cbd5e1' }}>Mon - Fri: 8:00 AM - 6:00 PM EAT (24/7 AI Automation)</div>
+                    <div style={{ color: '#334155' }}>Mon - Fri: 8:00 AM - 6:00 PM EAT (24/7 AI Automation)</div>
                   </div>
                 </div>
               </div>
@@ -725,9 +770,9 @@ export default function LandingPage() {
           >
             <div>© {new Date().getFullYear()} LeadFast AI. All rights reserved. Owned &amp; Operated by Ivula Technologies.</div>
             <div style={{ display: 'flex', gap: '16px' }}>
-              <Link href="/login" style={{ color: '#94a3b8' }}>Login</Link>
-              <Link href="/client" style={{ color: '#94a3b8' }}>Client Directory</Link>
-              <a href="#contact" style={{ color: '#94a3b8' }}>Contacts</a>
+              <Link href="/login" style={{ color: '#475569' }}>Login</Link>
+              <Link href="/client" style={{ color: '#475569' }}>Client Directory</Link>
+              <a href="#contact" style={{ color: '#475569' }}>Contacts</a>
             </div>
           </div>
         </div>

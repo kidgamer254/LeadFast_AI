@@ -175,30 +175,30 @@ export default function SettingsPage() {
 
   if (loading) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-[#07111f]">
-        <div className="w-9 h-9 rounded-full border-[3px] border-slate-400/25 border-t-sky-400 animate-spin" role="status" aria-label="Loading" />
+      <main className="min-h-screen flex items-center justify-center bg-[#f1f5f9]">
+        <div className="w-9 h-9 rounded-full border-[3px] border-slate-300 border-t-sky-500 animate-spin" role="status" aria-label="Loading" />
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-[#07111f] text-[#f8fafc] px-4 py-6 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-[#f1f5f9] text-[#0f172a] px-4 py-6 sm:px-6 lg:px-8">
       <section className="max-w-3xl mx-auto space-y-6">
 
         {/* Header + Nav */}
-        <div className="panel card flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-5 sm:p-6 rounded-2xl bg-[rgba(15,23,42,0.92)] border border-[rgba(148,163,184,0.2)] shadow-xl">
+        <div className="panel card flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-md">
           <div>
-            <p className="text-[#38bdf8] text-xs font-semibold tracking-widest uppercase mb-1">Account</p>
-            <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight" style={{ minHeight: '1.3em' }}>
+            <p className="text-[#0284c7] text-xs font-semibold tracking-widest uppercase mb-1">Account</p>
+            <h1 className="text-xl sm:text-2xl font-bold text-[#0f172a] tracking-tight" style={{ minHeight: '1.3em' }}>
               {settingsTitle}
-              <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#38bdf8', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: settingsDone ? 0 : 1, animation: settingsDone ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
+              <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#0284c7', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: settingsDone ? 0 : 1, animation: settingsDone ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
             </h1>
             <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
           </div>
           <nav className="flex items-center gap-3 flex-wrap w-full sm:w-auto justify-start sm:justify-end">
             <a
               href="/dashboard"
-              className="px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-full bg-white/5 text-slate-300 border border-[rgba(148,163,184,0.2)] hover:bg-white/10 transition-all"
+              className="px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-full bg-slate-100 text-slate-600 border border-slate-200 hover:bg-slate-200 transition-all"
             >
               ← Dashboard
             </a>
@@ -207,19 +207,19 @@ export default function SettingsPage() {
         </div>
 
         {!businessId ? (
-          <div className="panel card p-6 rounded-2xl bg-[rgba(15,23,42,0.92)] border border-[rgba(148,163,184,0.2)]">
-            <p className="text-slate-400">No business is linked to this account yet.</p>
+          <div className="panel card p-6 rounded-2xl bg-white border border-slate-200">
+            <p className="text-slate-500">No business is linked to this account yet.</p>
           </div>
         ) : (
           <>
             {/* Update business information */}
-            <div className="panel card p-5 sm:p-6 rounded-2xl bg-[rgba(15,23,42,0.92)] border border-[rgba(148,163,184,0.2)] shadow-xl">
-              <h2 className="text-lg font-bold mb-1">Business Information</h2>
-              <p className="text-slate-400 text-sm mb-5">Update your business details, contact email, and phone number.</p>
+            <div className="panel card p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-md">
+              <h2 className="text-lg font-bold mb-1 text-[#0f172a]">Business Information</h2>
+              <p className="text-slate-500 text-sm mb-5">Update your business details, contact email, and phone number.</p>
 
               <form onSubmit={handleSave} className="grid gap-4">
                 <label className="grid gap-1.5">
-                  <span className="text-sm text-slate-300">Business Name</span>
+                  <span className="text-sm text-slate-600">Business Name</span>
                   <input
                     required
                     type="text"
@@ -230,7 +230,7 @@ export default function SettingsPage() {
                 </label>
 
                 <label className="grid gap-1.5">
-                  <span className="text-sm text-slate-300">Trade</span>
+                  <span className="text-sm text-slate-600">Trade</span>
                   <input
                     type="text"
                     value={trade}
@@ -240,7 +240,7 @@ export default function SettingsPage() {
                 </label>
 
                 <label className="grid gap-1.5">
-                  <span className="text-sm text-slate-300">Contact Email</span>
+                  <span className="text-sm text-slate-600">Contact Email</span>
                   <input
                     required
                     type="email"
@@ -251,7 +251,7 @@ export default function SettingsPage() {
                 </label>
 
                 <label className="grid gap-1.5">
-                  <span className="text-sm text-slate-300">Contact Phone</span>
+                  <span className="text-sm text-slate-600">Contact Phone</span>
                   <input
                     type="tel"
                     value={contactPhone}
@@ -269,7 +269,7 @@ export default function SettingsPage() {
                 </button>
 
                 {message && (
-                  <p role="alert" className={`text-sm ${message.startsWith('Failed') ? 'text-red-400' : 'text-green-400'}`}>
+                  <p role="alert" className={`text-sm ${message.startsWith('Failed') ? 'text-red-600' : 'text-green-600'}`}>
                     {message}
                   </p>
                 )}
@@ -277,15 +277,15 @@ export default function SettingsPage() {
             </div>
 
             {/* Add another business */}
-            <div className="panel card p-5 sm:p-6 rounded-2xl bg-[rgba(15,23,42,0.92)] border border-[rgba(148,163,184,0.2)] shadow-xl">
-              <h2 className="text-lg font-bold mb-1">Add Another Business</h2>
-              <p className="text-slate-400 text-sm mb-5">
+            <div className="panel card p-5 sm:p-6 rounded-2xl bg-white border border-slate-200 shadow-md">
+              <h2 className="text-lg font-bold mb-1 text-[#0f172a]">Add Another Business</h2>
+              <p className="text-slate-500 text-sm mb-5">
                 Your account can own more than one business. Creating a new one switches your active dashboard to it.
               </p>
 
               <form onSubmit={handleCreateBusiness} className="grid gap-4">
                 <label className="grid gap-1.5">
-                  <span className="text-sm text-slate-300">Business Name</span>
+                  <span className="text-sm text-slate-600">Business Name</span>
                   <input
                     required
                     type="text"
@@ -296,7 +296,7 @@ export default function SettingsPage() {
                 </label>
 
                 <label className="grid gap-1.5">
-                  <span className="text-sm text-slate-300">Trade</span>
+                  <span className="text-sm text-slate-600">Trade</span>
                   <input
                     type="text"
                     value={newBizTrade}
@@ -306,7 +306,7 @@ export default function SettingsPage() {
                 </label>
 
                 <label className="grid gap-1.5">
-                  <span className="text-sm text-slate-300">Contact Email</span>
+                  <span className="text-sm text-slate-600">Contact Email</span>
                   <input
                     required
                     type="email"
@@ -317,7 +317,7 @@ export default function SettingsPage() {
                 </label>
 
                 <label className="grid gap-1.5">
-                  <span className="text-sm text-slate-300">Contact Phone</span>
+                  <span className="text-sm text-slate-600">Contact Phone</span>
                   <input
                     type="tel"
                     value={newBizPhone}
@@ -335,15 +335,15 @@ export default function SettingsPage() {
                 </button>
 
                 {createMessage && (
-                  <p role="alert" className="text-sm text-red-400">{createMessage}</p>
+                  <p role="alert" className="text-sm text-red-600">{createMessage}</p>
                 )}
               </form>
             </div>
 
             {/* Delete business */}
-            <div className="panel card p-5 sm:p-6 rounded-2xl bg-[rgba(15,23,42,0.92)] border border-red-500/25 shadow-xl">
-              <h2 className="text-lg font-bold mb-1 text-red-400">Delete Business</h2>
-              <p className="text-slate-400 text-sm mb-4">
+            <div className="panel card p-5 sm:p-6 rounded-2xl bg-white border border-red-200 shadow-md">
+              <h2 className="text-lg font-bold mb-1 text-red-600">Delete Business</h2>
+              <p className="text-slate-500 text-sm mb-4">
                 This permanently deletes your business profile and all of its leads. This cannot be undone.
               </p>
 
@@ -351,14 +351,14 @@ export default function SettingsPage() {
                 <button
                   type="button"
                   onClick={() => setConfirmOpen(true)}
-                  className="px-5 py-2.5 text-sm font-semibold rounded-xl bg-red-600/15 text-red-400 border border-red-500/40 hover:bg-red-600/25 transition cursor-pointer"
+                  className="px-5 py-2.5 text-sm font-semibold rounded-xl bg-red-50 text-red-600 border border-red-200 hover:bg-red-100 transition cursor-pointer"
                 >
                   Delete Business
                 </button>
               ) : (
                 <div className="grid gap-3 max-w-md">
-                  <p className="text-sm text-slate-300">
-                    Type <span className="font-semibold text-white">{businessName}</span> to confirm deletion.
+                  <p className="text-sm text-slate-600">
+                    Type <span className="font-semibold text-[#0f172a]">{businessName}</span> to confirm deletion.
                   </p>
                   <input
                     type="text"
@@ -378,7 +378,7 @@ export default function SettingsPage() {
                     <button
                       type="button"
                       onClick={() => { setConfirmOpen(false); setConfirmText(''); }}
-                      className="px-5 py-2.5 text-sm font-semibold rounded-xl bg-white/5 text-slate-300 border border-[rgba(148,163,184,0.2)] hover:bg-white/10 transition cursor-pointer"
+                      className="px-5 py-2.5 text-sm font-semibold rounded-xl bg-slate-100 text-slate-600 border border-slate-200 hover:bg-slate-200 transition cursor-pointer"
                     >
                       Cancel
                     </button>

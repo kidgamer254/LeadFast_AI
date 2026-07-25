@@ -75,7 +75,7 @@ export default function ContactPage() {
         {/* Header + Nav */}
         <div className="panel card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '18px' }}>
           <div>
-            <p style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '6px' }}>AI-Powered Contact</p>
+            <p style={{ color: '#0284c7', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '6px', fontWeight: '600' }}>AI-Powered Contact</p>
             <h1 style={{ margin: 0, fontSize: '1.8rem' }}>LeadFast AI Contact Form</h1>
           </div>
           <nav className="nav" style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
@@ -90,13 +90,13 @@ export default function ContactPage() {
         {/* Contact Form */}
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <div className="panel card" style={{ width: '100%', maxWidth: '600px' }}>
-            <p style={{ color: '#94a3b8', marginBottom: '20px', marginTop: 0 }}>
+            <p style={{ color: '#475569', marginBottom: '20px', marginTop: 0 }}>
               Submit your enquiry and our AI assistant will respond to your email within seconds, powered by Claude AI.
             </p>
 
             <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '14px' }}>
               <label style={{ display: 'grid', gap: '6px' }}>
-                <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Full Name</span>
+                <span style={{ color: '#475569', fontSize: '0.9rem' }}>Full Name</span>
                 <input
                   type="text"
                   value={name}
@@ -107,7 +107,7 @@ export default function ContactPage() {
               </label>
 
               <label style={{ display: 'grid', gap: '6px' }}>
-                <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Email Address *</span>
+                <span style={{ color: '#475569', fontSize: '0.9rem' }}>Email Address *</span>
                 <input
                   type="email"
                   value={email}
@@ -118,7 +118,7 @@ export default function ContactPage() {
               </label>
 
               <label style={{ display: 'grid', gap: '6px' }}>
-                <span style={{ color: '#38bdf8', fontSize: '0.9rem', fontWeight: '500' }}>Target Contractor Business UUID (Optional)</span>
+                <span style={{ color: '#0284c7', fontSize: '0.9rem', fontWeight: '500' }}>Target Contractor Business UUID (Optional)</span>
                 <input
                   type="text"
                   value={targetBusinessUuid}
@@ -132,7 +132,7 @@ export default function ContactPage() {
               </label>
 
               <label style={{ display: 'grid', gap: '6px' }}>
-                <span style={{ color: '#94a3b8', fontSize: '0.9rem' }}>Message</span>
+                <span style={{ color: '#475569', fontSize: '0.9rem' }}>Message</span>
                 <textarea
                   rows={5}
                   value={message}
@@ -164,14 +164,14 @@ export default function ContactPage() {
 
             {status && (
               <div style={{ marginTop: '16px', padding: '14px', borderRadius: '12px', background: status.includes('wrong') ? 'rgba(239,68,68,0.1)' : 'rgba(34,197,94,0.1)', border: `1px solid ${status.includes('wrong') ? 'rgba(239,68,68,0.3)' : 'rgba(34,197,94,0.3)'}` }}>
-                <p style={{ margin: 0, color: status.includes('wrong') ? '#fca5a5' : '#86efac' }}>{status}</p>
+                <p style={{ margin: 0, color: status.includes('wrong') ? '#dc2626' : '#15803d' }}>{status}</p>
               </div>
             )}
 
             {aiReply && (
-              <div style={{ marginTop: '16px', padding: '14px', borderRadius: '12px', background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(56,189,248,0.2)' }}>
-                <p style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '8px', marginTop: 0 }}>AI Reply Preview</p>
-                <p style={{ margin: 0, color: '#e2e8f0', whiteSpace: 'pre-wrap', fontSize: '0.95rem' }}>{aiReply}</p>
+              <div style={{ marginTop: '16px', padding: '14px', borderRadius: '12px', background: 'rgba(2,132,199,0.06)', border: '1px solid rgba(2,132,199,0.2)' }}>
+                <p style={{ color: '#0284c7', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '8px', marginTop: 0, fontWeight: '600' }}>AI Reply Preview</p>
+                <p style={{ margin: 0, color: '#0f172a', whiteSpace: 'pre-wrap', fontSize: '0.95rem' }}>{aiReply}</p>
               </div>
             )}
           </div>

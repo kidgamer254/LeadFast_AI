@@ -130,7 +130,7 @@ export default function ClientMarketplacePage() {
     <main
       style={{
         minHeight: '100vh',
-        backgroundImage: `linear-gradient(to bottom, rgba(7, 17, 31, 0.75), rgba(7, 17, 31, 0.88)), url('/images/client.jpg')`,
+        backgroundImage: `linear-gradient(to bottom, rgba(248, 250, 252, 0.60), rgba(241, 245, 249, 0.72)), url('/images/client.jpg')`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -141,17 +141,17 @@ export default function ClientMarketplacePage() {
         {/* Header + Nav */}
         <div className="panel card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '24px' }}>
           <div>
-            <p style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '6px' }}>
+            <p style={{ color: '#0284c7', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '6px', fontWeight: '600' }}>
               Client Portal · LeadFast AI
             </p>
             <h1 style={{ margin: 0, fontSize: '1.8rem', minHeight: '1.2em' }}>
               {pageTitle}
-              <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#38bdf8', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: pageTitleDone ? 0 : 1, animation: pageTitleDone ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
+              <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#0284c7', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: pageTitleDone ? 0 : 1, animation: pageTitleDone ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
             </h1>
             <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
           </div>
           <nav className="nav" style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-            <a href="/login" style={{ background: 'rgba(255,255,255,0.06)', color: '#f8fafc', fontWeight: '500', padding: '8px 16px', borderRadius: '999px', textDecoration: 'none', border: '1px solid var(--border)' }}>
+            <a href="/login" style={{ background: '#f1f5f9', color: '#0f172a', fontWeight: '500', padding: '8px 16px', borderRadius: '999px', textDecoration: 'none', border: '1px solid var(--border)' }}>
               ← Role Selection / Login
             </a>
           </nav>
@@ -164,7 +164,7 @@ export default function ClientMarketplacePage() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '12px', flexWrap: 'wrap', marginBottom: '16px' }}>
               <div>
                 <h2 style={{ margin: 0 }}>Available Contractors</h2>
-                <p style={{ color: '#94a3b8', margin: '4px 0 0', fontSize: '0.9rem' }}>
+                <p style={{ color: '#475569', margin: '4px 0 0', fontSize: '0.9rem' }}>
                   Browse verified contractors and their specialized trades.
                 </p>
               </div>
@@ -183,10 +183,10 @@ export default function ClientMarketplacePage() {
 
             <div className="grid" style={{ gap: '12px' }}>
               {contractorsLoading ? (
-                <p style={{ color: '#94a3b8' }}>Loading directory...</p>
+                <p style={{ color: '#475569' }}>Loading directory...</p>
               ) : visibleContractors.length === 0 ? (
                 <div style={{ padding: '24px', textAlign: 'center', border: '1px solid var(--border)', borderRadius: '12px' }}>
-                  <p style={{ color: '#94a3b8', margin: 0 }}>No registered contractors listed for this trade yet.</p>
+                  <p style={{ color: '#475569', margin: 0 }}>No registered contractors listed for this trade yet.</p>
                   <p style={{ color: '#64748b', fontSize: '0.85rem', marginTop: '4px' }}>
                     You can still submit a general request below and we will match you with a provider.
                   </p>
@@ -199,18 +199,18 @@ export default function ClientMarketplacePage() {
                       border: selectedContractor === c.business_name ? '2px solid var(--accent-2)' : '1px solid var(--border)',
                       borderRadius: '14px',
                       padding: '16px',
-                      background: 'rgba(30, 41, 59, 0.5)',
+                      background: 'rgba(241, 245, 249, 0.7)',
                       transition: 'all 0.2s ease'
                     }}
                   >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
                       <div>
-                        <div style={{ fontWeight: '700', fontSize: '1.1rem' }}>{c.business_name}</div>
-                        <div style={{ color: '#38bdf8', fontSize: '0.9rem', marginTop: '2px' }}>
+                        <div style={{ fontWeight: '700', fontSize: '1.1rem', color: '#0f172a' }}>{c.business_name}</div>
+                        <div style={{ color: '#0284c7', fontSize: '0.9rem', marginTop: '2px', fontWeight: '500' }}>
                           🏷️ Trade: <strong>{c.trade || 'General Contracting'}</strong>
                         </div>
-                        <div style={{ color: '#94a3b8', fontSize: '0.8rem', marginTop: '6px', fontFamily: 'monospace', display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                          <span>🆔 UUID: <code style={{ color: '#38bdf8', background: 'rgba(15,23,42,0.6)', padding: '2px 6px', borderRadius: '4px' }}>{c.id}</code></span>
+                        <div style={{ color: '#475569', fontSize: '0.8rem', marginTop: '6px', fontFamily: 'monospace', display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                          <span>🆔 UUID: <code style={{ color: '#0369a1', background: '#e2e8f0', padding: '2px 6px', borderRadius: '4px' }}>{c.id}</code></span>
                           <button
                             type="button"
                             data-plain="true"
@@ -223,9 +223,9 @@ export default function ClientMarketplacePage() {
                               setTimeout(() => setCopiedUuidId(null), 2500);
                             }}
                             style={{
-                              background: copiedUuidId === c.id ? '#22c55e' : 'rgba(56, 189, 248, 0.15)',
+                              background: copiedUuidId === c.id ? '#16a34a' : 'rgba(2, 132, 199, 0.1)',
                               border: '1px solid var(--accent-2)',
-                              color: copiedUuidId === c.id ? '#white' : '#38bdf8',
+                              color: copiedUuidId === c.id ? '#ffffff' : '#0284c7',
                               fontSize: '0.72rem',
                               fontWeight: '600',
                               padding: '2px 8px',
@@ -246,11 +246,12 @@ export default function ClientMarketplacePage() {
                           setTargetBusinessUuid(c.id);
                         }}
                         style={{
-                          background: selectedContractor === c.business_name ? 'var(--accent-2)' : 'rgba(255,255,255,0.06)',
-                          color: selectedContractor === c.business_name ? '#07111f' : '#f8fafc',
+                          background: selectedContractor === c.business_name ? 'var(--accent-2)' : '#ffffff',
+                          color: selectedContractor === c.business_name ? '#ffffff' : '#0f172a',
                           fontSize: '0.85rem',
                           fontWeight: '600',
-                          padding: '6px 14px'
+                          padding: '6px 14px',
+                          border: '1px solid var(--border)'
                         }}
                       >
                         {selectedContractor === c.business_name ? '✓ Selected' : 'Request Quote'}
@@ -265,7 +266,7 @@ export default function ClientMarketplacePage() {
           {/* Right Column: Lead Service Request Form */}
           <div className="panel card">
             <h2 style={{ marginTop: 0 }}>Submit Service Request</h2>
-            <p style={{ color: '#94a3b8', marginBottom: '16px', fontSize: '0.9rem' }}>
+            <p style={{ color: '#475569', marginBottom: '16px', fontSize: '0.9rem' }}>
               {selectedContractor 
                 ? `Direct request to ${selectedContractor}` 
                 : 'Send your project details to matched contractors. You will receive an instant email confirmation.'}
@@ -273,18 +274,18 @@ export default function ClientMarketplacePage() {
 
             <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '14px' }}>
               {selectedContractor && (
-                <div style={{ padding: '8px 12px', background: 'rgba(56, 189, 248, 0.1)', border: '1px solid var(--accent-2)', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span style={{ fontSize: '0.85rem', color: '#38bdf8' }}>
+                <div style={{ padding: '8px 12px', background: 'rgba(2, 132, 199, 0.08)', border: '1px solid var(--accent-2)', borderRadius: '8px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span style={{ fontSize: '0.85rem', color: '#0284c7' }}>
                     Target Contractor: <strong>{selectedContractor}</strong>
                   </span>
-                  <button type="button" onClick={() => { setSelectedContractor(''); setSelectedContractorId(''); setTargetBusinessUuid(''); }} style={{ background: 'none', border: 'none', color: '#94a3b8', cursor: 'pointer', fontSize: '0.8rem' }}>
+                  <button type="button" onClick={() => { setSelectedContractor(''); setSelectedContractorId(''); setTargetBusinessUuid(''); }} style={{ background: 'none', border: 'none', color: '#64748b', cursor: 'pointer', fontSize: '0.8rem' }}>
                     Clear
                   </button>
                 </div>
               )}
 
               <label style={{ display: 'grid', gap: '4px' }}>
-                <span style={{ fontSize: '0.85rem', color: '#38bdf8', fontWeight: '500' }}>Target Contractor Business UUID (Optional)</span>
+                <span style={{ fontSize: '0.85rem', color: '#0284c7', fontWeight: '500' }}>Target Contractor Business UUID (Optional)</span>
                 <input
                   value={targetBusinessUuid}
                   onChange={(e) => setTargetBusinessUuid(e.target.value)}
@@ -297,22 +298,22 @@ export default function ClientMarketplacePage() {
               </label>
 
               <label style={{ display: 'grid', gap: '4px' }}>
-                <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>Your Full Name *</span>
+                <span style={{ fontSize: '0.85rem', color: '#475569' }}>Your Full Name *</span>
                 <input required value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} placeholder="John Smith" />
               </label>
 
               <label style={{ display: 'grid', gap: '4px' }}>
-                <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>Email Address *</span>
+                <span style={{ fontSize: '0.85rem', color: '#475569' }}>Email Address *</span>
                 <input required type="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} placeholder="john@example.com" />
               </label>
 
               <label style={{ display: 'grid', gap: '4px' }}>
-                <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>Phone Number</span>
+                <span style={{ fontSize: '0.85rem', color: '#475569' }}>Phone Number</span>
                 <input value={formData.phone} onChange={(e) => setFormData({ ...formData, phone: e.target.value })} placeholder="+1 (555) 000-0000" />
               </label>
 
               <label style={{ display: 'grid', gap: '4px' }}>
-                <span style={{ fontSize: '0.85rem', color: '#94a3b8' }}>Project Details & Message *</span>
+                <span style={{ fontSize: '0.85rem', color: '#475569' }}>Project Details & Message *</span>
                 <textarea rows={4} required value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} placeholder="Describe what work or repair you need done..." />
               </label>
 
@@ -337,14 +338,14 @@ export default function ClientMarketplacePage() {
 
               {status && (
                 <div style={{ marginTop: '12px', padding: '12px', borderRadius: '10px', background: status.includes('failed') || status.includes('Unable') ? 'rgba(239,68,68,0.1)' : 'rgba(34,197,94,0.1)', border: `1px solid ${status.includes('failed') || status.includes('Unable') ? 'rgba(239,68,68,0.3)' : 'rgba(34,197,94,0.3)'}` }}>
-                  <p style={{ margin: 0, color: status.includes('failed') || status.includes('Unable') ? '#fca5a5' : '#86efac', fontSize: '0.9rem' }}>{status}</p>
+                  <p style={{ margin: 0, color: status.includes('failed') || status.includes('Unable') ? '#dc2626' : '#15803d', fontSize: '0.9rem' }}>{status}</p>
                 </div>
               )}
 
               {aiReply && (
-                <div style={{ marginTop: '12px', padding: '14px', borderRadius: '10px', background: 'rgba(37,99,235,0.08)', border: '1px solid rgba(56,189,248,0.2)' }}>
-                  <p style={{ color: '#38bdf8', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '6px', marginTop: 0 }}>Confirmation Reply</p>
-                  <p style={{ margin: 0, color: '#e2e8f0', whiteSpace: 'pre-wrap', fontSize: '0.9rem' }}>{aiReply}</p>
+                <div style={{ marginTop: '12px', padding: '14px', borderRadius: '10px', background: 'rgba(2,132,199,0.06)', border: '1px solid rgba(2,132,199,0.2)' }}>
+                  <p style={{ color: '#0284c7', fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.12em', marginBottom: '6px', marginTop: 0, fontWeight: '600' }}>Confirmation Reply</p>
+                  <p style={{ margin: 0, color: '#0f172a', whiteSpace: 'pre-wrap', fontSize: '0.9rem' }}>{aiReply}</p>
                 </div>
               )}
             </form>
