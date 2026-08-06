@@ -68,26 +68,6 @@ export async function POST(request: Request) {
     }
 
     console.log("Lead inserted:", leadData);
-    // 👇 Task 1: Test Supabase connection
-    /*const {data: supabaseData, error: supabaseError  } = await supabase
-      .from("leads")
-      .select("*")
-      .limit(1);
-    
-    if (supabaseError) {
-      console.error("Supabase connection failed:", supabaseError);
-    
-      return NextResponse.json(
-        {
-          success: false,
-          message: "Could not connect to Supabase.",
-        },
-        { status: 500 }
-      );
-    }
-    
-    console.log("Supabase connection successful:", supabaseData);*/
-
     console.log("========== NEW LEAD ==========");
     console.log(body);
 
