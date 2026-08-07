@@ -1,12 +1,14 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useTypewriter } from '../hooks/useTypewriter';
 import { useRouter } from 'next/navigation';
 import LogoutButton from '../components/LogoutButton';
 import { supabaseAnon as supabase, hasSupabaseConfig } from '@/lib/supabase';
 
 export default function SettingsPage() {
   const router = useRouter();
+  const [settingsTitle, settingsDone] = useTypewriter('Settings', 80, 300);
 
   const [businessId, setBusinessId] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
@@ -187,7 +189,11 @@ export default function SettingsPage() {
         <div className="panel card flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 p-5 sm:p-6 rounded-2xl bg-[rgba(15,23,42,0.92)] border border-[rgba(148,163,184,0.2)] shadow-xl">
           <div>
             <p className="text-[#38bdf8] text-xs font-semibold tracking-widest uppercase mb-1">Account</p>
-            <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">Settings</h1>
+            <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight" style={{ minHeight: '1.3em' }}>
+              {settingsTitle}
+              <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#38bdf8', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: settingsDone ? 0 : 1, animation: settingsDone ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
+            </h1>
+            <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
           </div>
           <nav className="flex items-center gap-3 flex-wrap w-full sm:w-auto justify-start sm:justify-end">
             <a
@@ -257,7 +263,7 @@ export default function SettingsPage() {
                 <button
                   type="submit"
                   disabled={saving}
-                  className="justify-self-start px-5 py-2.5 text-sm font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-sky-400 text-white hover:opacity-90 transition cursor-pointer disabled:opacity-50"
+                  className="justify-self-start px-5 py-2.5 text-sm font-semibold rounded-xl shiny-btn text-white transition cursor-pointer disabled:opacity-50"
                 >
                   {saving ? 'Saving…' : 'Save Changes'}
                 </button>
@@ -323,7 +329,7 @@ export default function SettingsPage() {
                 <button
                   type="submit"
                   disabled={creatingBiz}
-                  className="justify-self-start px-5 py-2.5 text-sm font-semibold rounded-xl bg-gradient-to-r from-blue-600 to-sky-400 text-white hover:opacity-90 transition cursor-pointer disabled:opacity-50"
+                  className="justify-self-start px-5 py-2.5 text-sm font-semibold rounded-xl shiny-btn text-white transition cursor-pointer disabled:opacity-50"
                 >
                   {creatingBiz ? 'Creating…' : 'Create Business'}
                 </button>

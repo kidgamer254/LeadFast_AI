@@ -145,7 +145,7 @@ export default function ContactPage() {
               <button
                 type="submit"
                 className="btn"
-                style={{ background: 'linear-gradient(135deg, #2563eb, #38bdf8)', color: 'white', padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
+                style={{ color: 'white', padding: '12px 16px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
                 disabled={loading}
               >
                 {loading ? (

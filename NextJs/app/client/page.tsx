@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { useTypewriter } from '../hooks/useTypewriter';
 import { supabaseAnon as supabase, hasSupabaseConfig } from '@/lib/supabase';
 
 interface Contractor {
@@ -13,6 +14,7 @@ interface Contractor {
 }
 
 export default function ClientMarketplacePage() {
+  const [pageTitle, pageTitleDone] = useTypewriter('Browse Contractors & Submit Requests', 55, 300);
   const [contractors, setContractors] = useState<Contractor[]>([]);
   const [contractorsLoading, setContractorsLoading] = useState(true);
   const [selectedTrade, setSelectedTrade] = useState('All');
@@ -125,7 +127,16 @@ export default function ClientMarketplacePage() {
   }
 
   return (
-    <main>
+    <main
+      style={{
+        minHeight: '100vh',
+        backgroundImage: `linear-gradient(to bottom, rgba(7, 17, 31, 0.75), rgba(7, 17, 31, 0.88)), url('/images/client.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed',
+      }}
+    >
       <section className="container" style={{ padding: '24px 0 40px' }}>
         {/* Header + Nav */}
         <div className="panel card" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '16px', flexWrap: 'wrap', marginBottom: '24px' }}>
@@ -133,7 +144,11 @@ export default function ClientMarketplacePage() {
             <p style={{ color: '#38bdf8', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '0.24em', marginBottom: '6px' }}>
               Client Portal · LeadFast AI
             </p>
-            <h1 style={{ margin: 0, fontSize: '1.8rem' }}>Browse Contractors & Submit Requests</h1>
+            <h1 style={{ margin: 0, fontSize: '1.8rem', minHeight: '1.2em' }}>
+              {pageTitle}
+              <span style={{ display: 'inline-block', width: '2px', height: '0.8em', background: '#38bdf8', marginLeft: '3px', verticalAlign: 'middle', borderRadius: '2px', opacity: pageTitleDone ? 0 : 1, animation: pageTitleDone ? 'none' : 'blink 0.9s step-end infinite', transition: 'opacity 0.4s ease' }} />
+            </h1>
+            <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
           </div>
           <nav className="nav" style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
             <a href="/login" style={{ background: 'rgba(255,255,255,0.06)', color: '#f8fafc', fontWeight: '500', padding: '8px 16px', borderRadius: '999px', textDecoration: 'none', border: '1px solid var(--border)' }}>
@@ -198,6 +213,7 @@ export default function ClientMarketplacePage() {
                           <span>🆔 UUID: <code style={{ color: '#38bdf8', background: 'rgba(15,23,42,0.6)', padding: '2px 6px', borderRadius: '4px' }}>{c.id}</code></span>
                           <button
                             type="button"
+                            data-plain="true"
                             onClick={() => {
                               navigator.clipboard.writeText(c.id);
                               setTargetBusinessUuid(c.id);
@@ -303,7 +319,7 @@ export default function ClientMarketplacePage() {
               <button
                 type="submit"
                 className="btn"
-                style={{ background: 'linear-gradient(135deg, #2563eb, #38bdf8)', color: 'white', padding: '12px 16px', fontWeight: '600', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
+                style={{ color: 'white', padding: '12px 16px', fontWeight: '600', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '10px' }}
                 disabled={loading}
               >
                 {loading ? (
